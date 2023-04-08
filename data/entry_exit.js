@@ -90,8 +90,8 @@ var entryExits = {
                     "title":"Interstate 66 Access",
                     "image":"/images/flash/access-maps/i66/large-access-static.jpg",
                     "description":[
-                        "From eastbound I-66 you can travel north or south in the Express Lanes.",
-                        "From the northbound Express Lanes you can exit onto I-66 east or I-66 west.",
+                        "From eastbound I-66 you can travel north or south in the Express Lanes. To get to the Lanes, take the exit ramp on the right side of I-66 about 1 mile after Nutley Street. Follow signs that say \"TOLL, EXPRESS LANES ENTRANCE\" <a href=\"https://expresslanes.com/I66East-to-495Express\">More info here</a>.",
+                        "From the northbound Express Lanes you can exit onto I-66 east, I-66 west or the westbound 66 Express Lanes.",
                         "From westbound I-66 you can travel south in the Express Lanes.",
                         "From the southbound Express Lanes you can exit onto I-66 west."
                     ]
@@ -2149,8 +2149,8 @@ var entryExits = {
                     "title":"Interstate 66 Access",
                     "image":"/images/flash/access-maps/i66/large-access-static.jpg",
                     "description":[
-                        "From eastbound I-66 you can travel north or south in the Express Lanes.",
-                        "From the northbound Express Lanes you can exit onto I-66 east or I-66 west.",
+                        "From eastbound I-66 you can travel north or south in the Express Lanes. To get to the Lanes, take the exit ramp on the right side of I-66 about 1 mile after Nutley Street. Follow signs that say \"TOLL, EXPRESS LANES ENTRANCE\" <a href=\"https://expresslanes.com/I66East-to-495Express\">More info here</a>.",
+                        "From the northbound Express Lanes you can exit onto I-66 east, I-66 west or the westbound 66 Express Lanes.",
                         "From westbound I-66 you can travel south in the Express Lanes.",
                         "From the southbound Express Lanes you can exit onto I-66 west."
                     ]
@@ -3184,8 +3184,8 @@ var entryExits = {
                     "title":"Interstate 66 Access",
                     "image":"/images/flash/access-maps/i66/large-access-static.jpg",
                     "description":[
-                        "From eastbound I-66 you can travel north or south in the Express Lanes.",
-                        "From the northbound Express Lanes you can exit onto I-66 east or I-66 west.",
+                        "From eastbound I-66 you can travel north or south in the Express Lanes. To get to the Lanes, take the exit ramp on the right side of I-66 about 1 mile after Nutley Street. Follow signs that say \"TOLL, EXPRESS LANES ENTRANCE\" <a href=\"https://expresslanes.com/I66East-to-495Express\">More info here</a>.",
+                        "From the northbound Express Lanes you can exit onto I-66 east, I-66 west or the westbound 66 Express Lanes.",
                         "From westbound I-66 you can travel south in the Express Lanes.",
                         "From the southbound Express Lanes you can exit onto I-66 west."
                     ]
@@ -4900,8 +4900,8 @@ var entryExits = {
                     "title":"Interstate 66 Access",
                     "image":"/images/flash/access-maps/i66/large-access-static.jpg",
                     "description":[
-                        "From eastbound I-66 you can travel north or south in the Express Lanes.",
-                        "From the northbound Express Lanes you can exit onto I-66 east or I-66 west.",
+                        "From eastbound I-66 you can travel north or south in the Express Lanes. To get to the Lanes, take the exit ramp on the right side of I-66 about 1 mile after Nutley Street. Follow signs that say \"TOLL, EXPRESS LANES ENTRANCE\" <a href=\"https://expresslanes.com/I66East-to-495Express\">More info here</a>.",
+                        "From the northbound Express Lanes you can exit onto I-66 east, I-66 west or the westbound 66 Express Lanes.",
                         "From westbound I-66 you can travel south in the Express Lanes.",
                         "From the southbound Express Lanes you can exit onto I-66 west."
                     ]
@@ -5061,8 +5061,8 @@ var entryExits = {
                     "title":"Interstate 66 Access",
                     "image":"/images/flash/access-maps/i66/large-access-static.jpg",
                     "description":[
-                        "From eastbound I-66 you can travel north or south in the Express Lanes.",
-                        "From the northbound Express Lanes you can exit onto I-66 east or I-66 west.",
+                        "From eastbound I-66 you can travel north or south in the Express Lanes. To get to the Lanes, take the exit ramp on the right side of I-66 about 1 mile after Nutley Street. Follow signs that say \"TOLL, EXPRESS LANES ENTRANCE\" <a href=\"https://expresslanes.com/I66East-to-495Express\">More info here</a>.",
+                        "From the northbound Express Lanes you can exit onto I-66 east, I-66 west or the westbound 66 Express Lanes.",
                         "From westbound I-66 you can travel south in the Express Lanes.",
                         "From the southbound Express Lanes you can exit onto I-66 west."
                     ]

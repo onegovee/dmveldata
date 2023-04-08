@@ -50,26 +50,28 @@ if select_direction == "S":
     # 180SO - 495 Express Start (near MD)
     # 2232SO - Washington D.C.
     # 191SO - I-95/I-395/I-495 (Springfield Interchange)
+    # 217SD - I-95 Near Dumfries Road/Route 234
     select_entry_id = "180SO"
-    select_exit_id = "217SD" #I-95 Near Dumfries Road/Route 234
+    select_exit_id = "217SD"
     entry_ramps = idmap_json['ramps'][1]['Southbound'][0]['entries']
     exit_ramps = idmap_json['ramps'][1]['Southbound'][1]['exits']
 else: 
-    select_entry_id = "218NO" #I-95 Near Dumfries Road/Route 234
+    select_entry_id = "218NO"
     # 191ND - I-95/I-395/I-495 (Springfield Interchange)
     # 181ND - 495 Express End (near MD)
     # 186ND - Route 7 (Leesburg Pike)
     # 182ND - Route 267
+    # 218NO - I-95 Near Dumfries Road/Route 234
     # 224ND - Washington D.C.
-    select_exit_id = "191ND"
+    select_exit_id = "186ND"
     entry_ramps = idmap_json['ramps'][0]['Northbound'][0]['entries']
     exit_ramps = idmap_json['ramps'][0]['Northbound'][1]['exits']
 timestamp = datetime.datetime.now()
 print("As of", pricing_timestamp, "I-95 express lanes direction is", direction_txt)
 
 pricing_response = pricing_json['response']
-pricing_detail = pricing_json['debug_db_ramps_price']
-#print(pricing)
+# pricing_detail = pricing_json['debug_db_ramps_price']
+#print(pricing_response)
 for entry in entry_ramps:
     if (select_entry_id == entry.get('id')):
         entry_name = entry.get('name')
@@ -93,12 +95,13 @@ for entry in entry_ramps:
                                 od_price = "0"
                             #print(od_price)
                             od_status = price.get('status')
-                            #print(od_status)
-                            for detail in pricing_detail:
-                                #print(detail)
-                                if (od == str(detail.get('ODPair'))):
-                                    od_name = detail.get('od_name')[:-1]
-                                    print(od_name, '--> $' + od_price, od_status)
+                            od_road = price.get('road')
+                            print(od_road,od_price,od_status)
+                            # for detail in pricing_detail:
+                            #     #print(detail)
+                            #     if (od == str(detail.get('ODPair'))):
+                            #         od_name = detail.get('od_name')[:-1]
+                            #         print(od_name, '--> $' + od_price, od_status)
 
 # get the exit ramp name
 for exit in exit_ramps:
