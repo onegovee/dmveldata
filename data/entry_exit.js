@@ -1,20 +1,6 @@
 var newEntryExits;
 /*
-(function ($, Drupal, drupalSettings) {
-  Drupal.behaviors.myBehavior = {
-    attach: function (context, settings) {
-      $.ajax({
-        url: Drupal.url('roadways-ramps/generate-json'),
-        type:"GET",
-        contentType:"application/json; charset=utf-8",
-        dataType:"json",
-        success: function(response) {
-          newEntryExits = response;
-        }
-      });
-    }
-  };
-})(jQuery, Drupal, drupalSettings);
+MANUALLY GENERATED - NOT PROGRAMMATIC
 */
 var entryExits = {
     "Northbound":{
@@ -2055,6 +2041,137 @@ var entryExits = {
                         ]
                     }
                 ]
+            },
+            "234NO":{
+                "id":"234NO",
+                "label":"I-95 Near Route 17",
+                "latitude":"38.343597",
+                "longitude":"-77.488063",
+                "path":"95",
+                "index":"0",
+                "details":{
+                    "title":"I-95 Near Route 17",
+                    "image":"/images/flash/access-maps/fredex/TRANS-FredEx-Interchange-Map-3.png",
+                    "legend": false,
+                    "description":[
+                        "You can get on the northbound Express Lanes from the I-95 thru lanes near Route 17 by taking the ramp on the far left.",
+                        "Later this year, drivers on the I-95 local lanes will be able to get on the northbound Express Lanes using a flyover ramp.",
+                        "You can exit from the southbound Express Lanes to either the thru or local lanes on I-95 near Route 17. Keep left to exit to the thru lanes or stay right to get to the local lanes to access Route 17 or Route 3.",
+                        "This is the last exit for all southbound Express Lanes traffic."
+                    ]
+                },
+                "exits":[
+                    {
+                        "id":"181ND",
+                        "ods":[
+                            "1278",
+                            "1092"
+                        ]
+                    },
+                    {
+                        "id":"182ND",
+                        "ods":[
+                            "1278",
+                            "1091"
+                        ]
+                    },
+                    {
+                        "id":"183ND",
+                        "ods":[
+                            "1278",
+                            "1090"
+                        ]
+                    },
+                    {
+                        "id":"185ND",
+                        "ods":[
+                            "1278",
+                            "1089"
+                        ]
+                    },
+                    {
+                        "id":"186ND",
+                        "ods":[
+                            "1278",
+                            "1088"
+                        ]
+                    },
+                    {
+                        "id":"187ND",
+                        "ods":[
+                            "1278",
+                            "1087"
+                        ]
+                    },
+                    {
+                        "id":"188ND",
+                        "ods":[
+                            "1278",
+                            "1086"
+                        ]
+                    },
+                    {
+                        "id":"191ND",
+                        "ods":[
+                            "1278",
+                            "1085"
+                        ]
+                    },
+                    {
+                        "id":"201ND",
+                        "ods":[
+                            "1279"
+                        ]
+                    },
+                    {
+                        "id":"202ND",
+                        "ods":[
+                            "1278"
+                        ]
+                    },
+                    {
+                        "id":"204ND",
+                        "ods":[
+                            "1276"
+                        ]
+                    },
+                    {
+                        "id":"206ND",
+                        "ods":[
+                            "1277"
+                        ]
+                    },
+                    {
+                        "id":"208ND",
+                        "ods":[
+                            "1275"
+                        ]
+                    },
+                    {
+                        "id":"211ND",
+                        "ods":[
+                            "1274"
+                        ]
+                    },
+                    {
+                        "id":"222ND",
+                        "ods":[
+                            "1280"
+                        ]
+                    },
+                    {
+                        "id":"223ND",
+                        "ods":[
+                            "1281"
+                        ]
+                    },
+                    {
+                        "id":"224ND",
+                        "ods":[
+                            "1282"
+                        ]
+                    }
+                ]
             }
         },
         "exits":{
@@ -2518,6 +2635,13 @@ var entryExits = {
                             "1040",
                             "1167"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1040",
+                            "1288"
+                        ]
                     }
                 ]
             },
@@ -2683,6 +2807,13 @@ var entryExits = {
                         "ods":[
                             "1048",
                             "1167"
+                        ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1048",
+                            "1288"
                         ]
                     }
                 ]
@@ -2850,6 +2981,13 @@ var entryExits = {
                             "1055",
                             "1167"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1055",
+                            "1288"
+                        ]
                     }
                 ]
             },
@@ -3009,6 +3147,13 @@ var entryExits = {
                         "ods":[
                             "1062",
                             "1167"
+                        ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1062",
+                            "1288"
                         ]
                     }
                 ]
@@ -3170,6 +3315,13 @@ var entryExits = {
                             "1068",
                             "1167"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1068",
+                            "1288"
+                        ]
                     }
                 ]
             },
@@ -3326,6 +3478,13 @@ var entryExits = {
                             "1074",
                             "1167"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1074",
+                            "1288"
+                        ]
                     }
                 ]
             },
@@ -3480,6 +3639,13 @@ var entryExits = {
                             "1079",
                             "1167"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1079",
+                            "1288"
+                        ]
                     }
                 ]
             },
@@ -3615,6 +3781,12 @@ var entryExits = {
                         "ods":[
                             "1084",
                             "1167"
+                        ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1289"
                         ]
                     }
                 ]
@@ -3779,6 +3951,12 @@ var entryExits = {
                         "id":"2202SD",
                         "ods":[
                             "1214"
+                        ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1291"
                         ]
                     }
                 ]
@@ -3945,6 +4123,12 @@ var entryExits = {
                         "ods":[
                             "1214"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1291"
+                        ]
                     }
                 ]
             },
@@ -4109,6 +4293,12 @@ var entryExits = {
                         "ods":[
                             "1214"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1291"
+                        ]
                     }
                 ]
             },
@@ -4261,6 +4451,12 @@ var entryExits = {
                         "ods":[
                             "1226"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1290"
+                        ]
                     }
                 ]
             },
@@ -4409,6 +4605,12 @@ var entryExits = {
                         "ods":[
                             "1157"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1289"
+                        ]
                     }
                 ]
             },
@@ -4492,6 +4694,12 @@ var entryExits = {
                         "ods":[
                             "1167"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1288"
+                        ]
                     }
                 ]
             },
@@ -4556,6 +4764,12 @@ var entryExits = {
                         "id":"2202SD",
                         "ods":[
                             "1181"
+                        ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1285"
                         ]
                     }
                 ]
@@ -4622,6 +4836,12 @@ var entryExits = {
                         "ods":[
                             "1174"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1287"
+                        ]
                     }
                 ]
             },
@@ -4686,6 +4906,12 @@ var entryExits = {
                         "id":"2202SD",
                         "ods":[
                             "1181"
+                        ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1285"
                         ]
                     }
                 ]
@@ -4752,6 +4978,12 @@ var entryExits = {
                         "ods":[
                             "1188"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1286"
+                        ]
                     }
                 ]
             },
@@ -4811,6 +5043,12 @@ var entryExits = {
                         "ods":[
                             "1194"
                         ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1284"
+                        ]
                     }
                 ]
             },
@@ -4851,6 +5089,12 @@ var entryExits = {
                         "id":"2202SD",
                         "ods":[
                             "1197"
+                        ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1283"
                         ]
                     }
                 ]
@@ -5295,6 +5539,25 @@ var entryExits = {
                     "description":[
                         "Traveling southbound on the Express Lanes, you can exit onto I-95 just after Garrisonville Road.\r",
                         "\tThis is the last exit for all southbound Express Lanes traffic."
+                    ]
+                }
+            },
+            "235SD":{
+                "id":"235SD",
+                "label":"I-95 Near Route 17",
+                "latitude":"38.345422",
+                "longitude":"-77.486364",
+                "path":"95",
+                "index":"0",
+                "details":{
+                    "title":"I-95 Near Route 17",
+                    "image":"/images/flash/access-maps/fredex/TRANS-FredEx-Interchange-Map-3.png",
+                    "legend": false,
+                    "description":[
+                        "You can get on the northbound Express Lanes from the I-95 thru lanes near Route 17 by taking the ramp on the far left.",
+                        "Later this year, drivers on the I-95 local lanes will be able to get on the northbound Express Lanes using a flyover ramp.",
+                        "You can exit from the southbound Express Lanes to either the thru or local lanes on I-95 near Route 17. Keep left to exit to the thru lanes or stay right to get to the local lanes to access Route 17 or Route 3.",
+                        "This is the last exit for all southbound Express Lanes traffic."
                     ]
                 }
             },
