@@ -75,6 +75,7 @@ var entryExits = {
                 "details":{
                     "title":"Interstate 66 Access",
                     "image":"/images/flash/access-maps/i66/large-access-static.jpg",
+                    "legend": false,
                     "description":[
                         "From eastbound I-66 you can travel north or south in the Express Lanes. To get to the Lanes, take the exit ramp on the right side of I-66 about 1 mile after Nutley Street. Follow signs that say \"TOLL, EXPRESS LANES ENTRANCE\" <a href=\"https://expresslanes.com/I66East-to-495Express\">More info here</a>.",
                         "From the northbound Express Lanes you can exit onto I-66 east, I-66 west or the westbound 66 Express Lanes.",
@@ -370,6 +371,7 @@ var entryExits = {
                 "details":{
                     "title":"I-395 Near Eads Street Access",
                     "image":"/images/flash/access-maps/eads-street/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "You can get on the northbound 395 Express Lanes from Eads Street or from the regular lanes on 395 near Eads Street.",
                         "You can exit from the northbound 395 Express Lanes to Eads Street  -- exit left to go to the Pentagon, exit right to go Pentagon City.",
@@ -395,6 +397,7 @@ var entryExits = {
                 "details":{
                     "title":"Shirlington Circle Access",
                     "image":"/images/flash/access-maps/shirlington-circle/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "You can get on the northbound 395 Express Lanes from Shirlington Circle.",
                         "You can exit from the southbound 395 Express Lanes to Shirlington Circle."
@@ -431,6 +434,7 @@ var entryExits = {
                 "details":{
                     "title":"Seminary Road",
                     "image":"/images/flash/access-maps/seminary-road/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "From Seminary Road you can travel north or south in the Express Lanes.",
                         "From the northbound or southbound Express Lanes you can exit onto Seminary Road."
@@ -1906,6 +1910,12 @@ var entryExits = {
                         "ods":[
                             "1094"
                         ]
+                    },
+                    {
+                        "id":"228ND",
+                        "ods":[
+                            "1304"
+                        ]
                     }
                 ]
             },
@@ -1915,7 +1925,7 @@ var entryExits = {
                 "latitude":"38.452553",
                 "longitude":"-77.407403",
                 "path":"95",
-                "index":"0",
+                "index":"7",
                 "details":{
                     "title":"I-95 near Courthouse Road/Route 630 to 95 Express Lanes",
                     "image":"/images/accessing/maps/NorthboundEntry-1-2.png",
@@ -2039,6 +2049,153 @@ var entryExits = {
                         "ods":[
                             "1094"
                         ]
+                    },
+                    {
+                        "id":"228ND",
+                        "ods":[
+                            "1304"
+                        ]
+                    }
+                ]
+            },
+            "232NO":{
+                "id":"232NO",
+                "label":"Courthouse Road/Route 630",
+                "latitude":"38.422051357101374",
+                "longitude":"-77.42198543776266",
+                "path":"95",
+                "index":"6",
+                "details":{
+                    "title":"Courthouse Road/Route 630",
+                    "image":"/images/flash/access-maps/fredex/TRANS-FredEx-Interchange-Map-2.svg",
+                    "legend": false,
+                    "description":[
+                        "You can get on the northbound 95 Express Lanes from Courthouse Road.",
+                        "You can exit from the southbound 95 Express Lanes to Courthouse Road."
+                    ]
+                },
+                "exits":[
+                    {
+                        "id":"181ND",
+                        "ods":[
+                            "1299",
+                            "1092"
+                        ]
+                    },
+                    {
+                        "id":"182ND",
+                        "ods":[
+                            "1299",
+                            "1091"
+                        ]
+                    },
+                    {
+                        "id":"183ND",
+                        "ods":[
+                            "1299",
+                            "1090"
+                        ]
+                    },
+                    {
+                        "id":"185ND",
+                        "ods":[
+                            "1299",
+                            "1089"
+                        ]
+                    },
+                    {
+                        "id":"186ND",
+                        "ods":[
+                            "1299",
+                            "1088"
+                        ]
+                    },
+                    {
+                        "id":"187ND",
+                        "ods":[
+                            "1299",
+                            "1087"
+                        ]
+                    },
+                    {
+                        "id":"188ND",
+                        "ods":[
+                            "1299",
+                            "1086"
+                        ]
+                    },
+                    {
+                        "id":"191ND",
+                        "ods":[
+                            "1299",
+                            "1085"
+                        ]
+                    },
+                    {
+                        "id":"202ND",
+                        "ods":[
+                            "1299"
+                        ]
+                    },
+                    {
+                        "id":"204ND",
+                        "ods":[
+                            "1297"
+                        ]
+                    },
+                    {
+                        "id":"206ND",
+                        "ods":[
+                            "1298"
+                        ]
+                    },
+                    {
+                        "id":"208ND",
+                        "ods":[
+                            "1296"
+                        ]
+                    },
+                    {
+                        "id":"211ND",
+                        "ods":[
+                            "1295"
+                        ]
+                    },
+                    {
+                        "id":"228ND",
+                        "ods":[
+                            "1304"
+                        ]
+                    },
+                    {
+                        "id":"201ND",
+                        "ods":[
+                            "1300"
+                        ]
+                    },
+                    {
+                        "id":"222ND",
+                        "ods":[
+                            "1301"
+                        ]
+                    },
+                    {
+                        "id":"2232ND",
+                        "ods":[
+                            "1302"
+                        ]
+                    },
+                    {
+                        "id":"223ND",
+                        "ods":[
+                            "1302"
+                        ]
+                    },
+                    {
+                        "id":"224ND",
+                        "ods":[
+                            "1303"
+                        ]
                     }
                 ]
             },
@@ -2048,14 +2205,13 @@ var entryExits = {
                 "latitude":"38.343597",
                 "longitude":"-77.488063",
                 "path":"95",
-                "index":"0",
+                "index":"1",
                 "details":{
                     "title":"I-95 Near Route 17",
                     "image":"/images/flash/access-maps/fredex/TRANS-FredEx-Interchange-Map-3.png",
                     "legend": false,
                     "description":[
-                        "You can get on the northbound Express Lanes from the I-95 thru lanes near Route 17 by taking the ramp on the far left.",
-                        "Later this year, drivers on the I-95 local lanes will be able to get on the northbound Express Lanes using a flyover ramp.",
+                        "You can get on the northbound Express Lanes from I-95 through or local lanes near Route 17.",
                         "You can exit from the southbound Express Lanes to either the thru or local lanes on I-95 near Route 17. Keep left to exit to the thru lanes or stay right to get to the local lanes to access Route 17 or Route 3.",
                         "This is the last exit for all southbound Express Lanes traffic."
                     ]
@@ -2118,12 +2274,6 @@ var entryExits = {
                         ]
                     },
                     {
-                        "id":"201ND",
-                        "ods":[
-                            "1279"
-                        ]
-                    },
-                    {
                         "id":"202ND",
                         "ods":[
                             "1278"
@@ -2154,9 +2304,27 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"228ND",
+                        "ods":[
+                            "1293"
+                        ]
+                    },
+                    {
+                        "id":"201ND",
+                        "ods":[
+                            "1279"
+                        ]
+                    },
+                    {
                         "id":"222ND",
                         "ods":[
                             "1280"
+                        ]
+                    },
+                    {
+                        "id":"2232ND",
+                        "ods":[
+                            "1281"
                         ]
                     },
                     {
@@ -2217,6 +2385,7 @@ var entryExits = {
                 "details":{
                     "title":"Jones Branch Drive/Route 123 Access",
                     "image":"/images/flash/access-maps/jones-branch-drive/large-access-static.jpg",
+                    "legend": false,
                     "description":[
                         "From Jones Branch Drive/Route 123 in Tysons Corner you can travel north or south in the Express Lanes.",
                         "From the northbound or southbound Express Lanes you can exit onto Jones Branch Drive/Route 123."
@@ -2265,6 +2434,7 @@ var entryExits = {
                 "details":{
                     "title":"Interstate 66 Access",
                     "image":"/images/flash/access-maps/i66/large-access-static.jpg",
+                    "legend": false,
                     "description":[
                         "From eastbound I-66 you can travel north or south in the Express Lanes. To get to the Lanes, take the exit ramp on the right side of I-66 about 1 mile after Nutley Street. Follow signs that say \"TOLL, EXPRESS LANES ENTRANCE\" <a href=\"https://expresslanes.com/I66East-to-495Express\">More info here</a>.",
                         "From the northbound Express Lanes you can exit onto I-66 east, I-66 west or the westbound 66 Express Lanes.",
@@ -2407,6 +2577,7 @@ var entryExits = {
                 "details":{
                     "title":"Seminary Road",
                     "image":"/images/flash/access-maps/seminary-road/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "From Seminary Road you can travel north or south in the Express Lanes.",
                         "From the northbound or southbound Express Lanes you can exit onto Seminary Road."
@@ -2423,6 +2594,7 @@ var entryExits = {
                 "details":{
                     "title":"Pentagon/Eads Street",
                     "image":"/images/flash/access-maps/eads-street/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "You can get on the northbound 395 Express Lanes from Eads Street or from the regular lanes on 395 near Eads Street.",
                         "You can exit from the northbound 395 Express Lanes to Eads Street  -- exit left to go to the Pentagon, exit right to go Pentagon City.",
@@ -2440,6 +2612,7 @@ var entryExits = {
                 "details":{
                     "title":"Washington Boulevard/Route 27",
                     "image":"/images/flash/access-maps/washignton-boulevard/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "You can exit from the northbound 395 Express Lanes to go north on Route 27 / S. Washington Boulevard.",
                         "You can get on the southbound 395 Express Lanes from southbound Route 27 / S. Washington Boulevard."
@@ -2456,9 +2629,27 @@ var entryExits = {
                 "details":{
                     "title":"Washington D.C.",
                     "image":"/images/flash/access-maps/washignton-dc/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "If you get on the northbound 395 Express Lanes from Eads Street or the regular lanes near Eads Street, you can go toward the 14th Street or I-395 once you\u2019re in DC.",
                         "If you\u2019re coming from DC on the southbound HOV lanes, you can continue your trip onto the southbound 395 Express Lanes once you\u2019re in Virginia."
+                    ]
+                }
+            },
+            "228ND":{
+                "id":"228ND",
+                "label":"I-95 Near Quantico",
+                "latitude":"38.50888867345871",
+                "longitude":"-77.37763267889507",
+                "path":"95",
+                "index":"38",
+                "details":{
+                    "title":"I-95 Near Quantico",
+                    "image":"/images/flash/access-maps/fredex/TRANS-FredEx-Interchange-Map-1.svg",
+                    "legend": false,
+                    "description":[
+                        "Traveling north on the Express Lanes, you can exit onto I-95 just before Marine Corps Base Quantico / Russell Road.", 
+                        "Traveling south on I-95, you can enter the Express Lanes just after Marine Corps Base Quantico / Russell Road."
                     ]
                 }
             }
@@ -2637,6 +2828,13 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1040",
+                            "1315"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1040",
@@ -2810,6 +3008,13 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1048",
+                            "1315"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1048",
@@ -2828,6 +3033,7 @@ var entryExits = {
                 "details":{
                     "title":"Jones Branch Drive/Route 123 Access",
                     "image":"/images/flash/access-maps/jones-branch-drive/large-access-static.jpg",
+                    "legend": false,
                     "description":[
                         "From Jones Branch Drive/Route 123 in Tysons Corner you can travel north or south in the Express Lanes.",
                         "From the northbound or southbound Express Lanes you can exit onto Jones Branch Drive/Route 123."
@@ -2980,6 +3186,13 @@ var entryExits = {
                         "ods":[
                             "1055",
                             "1167"
+                        ]
+                    },
+                    {
+                        "id":"233SD",
+                        "ods":[
+                            "1055",
+                            "1315"
                         ]
                     },
                     {
@@ -3150,6 +3363,13 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1062",
+                            "1315"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1062",
@@ -3317,6 +3537,13 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1068",
+                            "1315"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1068",
@@ -3335,6 +3562,7 @@ var entryExits = {
                 "details":{
                     "title":"Interstate 66 Access",
                     "image":"/images/flash/access-maps/i66/large-access-static.jpg",
+                    "legend": false,
                     "description":[
                         "From eastbound I-66 you can travel north or south in the Express Lanes. To get to the Lanes, take the exit ramp on the right side of I-66 about 1 mile after Nutley Street. Follow signs that say \"TOLL, EXPRESS LANES ENTRANCE\" <a href=\"https://expresslanes.com/I66East-to-495Express\">More info here</a>.",
                         "From the northbound Express Lanes you can exit onto I-66 east, I-66 west or the westbound 66 Express Lanes.",
@@ -3477,6 +3705,13 @@ var entryExits = {
                         "ods":[
                             "1074",
                             "1167"
+                        ]
+                    },
+                    {
+                        "id":"233SD",
+                        "ods":[
+                            "1074",
+                            "1315"
                         ]
                     },
                     {
@@ -3641,6 +3876,13 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1079",
+                            "1315"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1079",
@@ -3784,6 +4026,13 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1084",
+                            "1315"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1289"
@@ -3801,6 +4050,7 @@ var entryExits = {
                 "details":{
                     "title":"Washington D.C.",
                     "image":"/images/flash/access-maps/washignton-dc/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "If you get on the northbound 395 Express Lanes from Eads Street or the regular lanes near Eads Street, you can go toward the 14th Street or I-395 once you\u2019re in DC.",
                         "If you\u2019re coming from DC on the southbound HOV lanes, you can continue your trip onto the southbound 395 Express Lanes once you\u2019re in Virginia."
@@ -3954,6 +4204,12 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1318"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1291"
@@ -3971,6 +4227,7 @@ var entryExits = {
                 "details":{
                     "title":"Pentagon/Eads Street",
                     "image":"/images/flash/access-maps/eads-street/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "You can get on the northbound 395 Express Lanes from Eads Street or from the regular lanes on 395 near Eads Street.",
                         "You can exit from the northbound 395 Express Lanes to Eads Street  -- exit left to go to the Pentagon, exit right to go Pentagon City.",
@@ -4125,6 +4382,12 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1318"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1291"
@@ -4142,6 +4405,7 @@ var entryExits = {
                 "details":{
                     "title":"Washington Boulevard/Route 27",
                     "image":"/images/flash/access-maps/washignton-boulevard/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "You can exit from the northbound 395 Express Lanes to go north on Route 27 / S. Washington Boulevard.",
                         "You can get on the southbound 395 Express Lanes from southbound Route 27 / S. Washington Boulevard."
@@ -4295,6 +4559,12 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1318"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1291"
@@ -4312,6 +4582,7 @@ var entryExits = {
                 "details":{
                     "title":"Seminary Road",
                     "image":"/images/flash/access-maps/seminary-road/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "From Seminary Road you can travel north or south in the Express Lanes.",
                         "From the northbound or southbound Express Lanes you can exit onto Seminary Road."
@@ -4450,6 +4721,12 @@ var entryExits = {
                         "id":"2202SD",
                         "ods":[
                             "1226"
+                        ]
+                    },
+                    {
+                        "id":"233SD",
+                        "ods":[
+                            "1317"
                         ]
                     },
                     {
@@ -4607,6 +4884,12 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1315"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1289"
@@ -4696,6 +4979,12 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1315"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1288"
@@ -4764,6 +5053,12 @@ var entryExits = {
                         "id":"2202SD",
                         "ods":[
                             "1181"
+                        ]
+                    },
+                    {
+                        "id":"233SD",
+                        "ods":[
+                            "1312"
                         ]
                     },
                     {
@@ -4838,6 +5133,12 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1314"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1287"
@@ -4906,6 +5207,12 @@ var entryExits = {
                         "id":"2202SD",
                         "ods":[
                             "1181"
+                        ]
+                    },
+                    {
+                        "id":"233SD",
+                        "ods":[
+                            "1312"
                         ]
                     },
                     {
@@ -4980,6 +5287,12 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1313"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1286"
@@ -5045,6 +5358,12 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1311"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1284"
@@ -5054,16 +5373,17 @@ var entryExits = {
             },
             "214SO":{
                 "id":"214SO",
-                "label":"I-95 Near Opitz Boulevard",
-                "latitude":"38.6368858775625060",
-                "longitude":"-77.2901701927184900",
+                "label":"I-95 Near Dale Boulevard",
+                "latitude":"38.62637740172776",
+                "longitude":"-77.2943014508278",
                 "path":"95",
                 "index":"184",
                 "details":{
-                    "title":"I-95 near Opitz Boulevard/Route 642 to 95 Express Lanes",
-                    "image":"/images/accessing/maps/SouthboundEntry-2N-1.png",
+                    "title":"I-95 near Dale Boulevard/Route 642 to 95 Express Lanes",
+                    "image":"/images/flash/access-maps/TRANS-Opitz-Interchange-Map-RD3-V0.png",
+                    "legend": false,
                     "description":[
-                        "Traveling south on I-95, you can enter the southbound Express Lanes just north of Opitz Boulevard."
+                        "Traveling south on I-95, you can enter the southbound Express Lanes just north of Dale Boulevard."
                     ]
                 },
                 "exits":[
@@ -5092,9 +5412,52 @@ var entryExits = {
                         ]
                     },
                     {
+                        "id":"233SD",
+                        "ods":[
+                            "1310"
+                        ]
+                    },
+                    {
                         "id":"235SD",
                         "ods":[
                             "1283"
+                        ]
+                    }
+                ]
+            },
+            "229SO":{
+                "id":"229SO",
+                "label":"I-95 Near Quantico",
+                "latitude":"38.50888867345871",
+                "longitude":"-77.37763267889507",
+                "path":"95",
+                "index":"38",
+                "details":{
+                    "title":"I-95 Near Quantico",
+                    "image":"/images/flash/access-maps/fredex/TRANS-FredEx-Interchange-Map-1.svg",
+                    "legend": false,
+                    "description":[
+                        "Traveling north on the Express Lanes, you can exit onto I-95 just before Marine Corps Base Quantico / Russell Road.", 
+                        "Traveling south on I-95, you can enter the Express Lanes just after Marine Corps Base Quantico / Russell Road."
+                    ]
+                },
+                "exits":[
+                    {
+                        "id":"220SD",
+                        "ods":[
+                            "1305"
+                        ]
+                    },
+                    {
+                        "id":"233SD",
+                        "ods":[
+                            "1306"
+                        ]
+                    },
+                    {
+                        "id":"235SD",
+                        "ods":[
+                            "1307"
                         ]
                     }
                 ]
@@ -5111,6 +5474,7 @@ var entryExits = {
                 "details":{
                     "title":"Jones Branch Drive/Route 123 Access",
                     "image":"/images/flash/access-maps/jones-branch-drive/large-access-static.jpg",
+                    "legend": false,
                     "description":[
                         "From Jones Branch Drive/Route 123 in Tysons Corner you can travel north or south in the Express Lanes.",
                         "From the northbound or southbound Express Lanes you can exit onto Jones Branch Drive/Route 123."
@@ -5143,6 +5507,7 @@ var entryExits = {
                 "details":{
                     "title":"Interstate 66 Access",
                     "image":"/images/flash/access-maps/i66/large-access-static.jpg",
+                    "legend": false,
                     "description":[
                         "From eastbound I-66 you can travel north or south in the Express Lanes. To get to the Lanes, take the exit ramp on the right side of I-66 about 1 mile after Nutley Street. Follow signs that say \"TOLL, EXPRESS LANES ENTRANCE\" <a href=\"https://expresslanes.com/I66East-to-495Express\">More info here</a>.",
                         "From the northbound Express Lanes you can exit onto I-66 east, I-66 west or the westbound 66 Express Lanes.",
@@ -5475,7 +5840,8 @@ var entryExits = {
                 "index":"87",
                 "details":{
                     "title":"95 Express Lanes to I-95 near Dale Boulevard",
-                    "image":"/images/accessing/maps/SouthboundExit-2N-2.png",
+                    "image":"/images/flash/access-maps/TRANS-Opitz-Interchange-Map-RD3-V0.png",
+                    "legend": false,
                     "description":[
                         "Traveling southbound on the Express Lanes, you can exit onto I-95 near Dale Boulevard."
                     ]
@@ -5532,7 +5898,7 @@ var entryExits = {
                 "latitude":"38.452750",
                 "longitude":"-77.408712",
                 "path":"95",
-                "index":"0",
+                "index":"7",
                 "details":{
                     "title":"95 Express Lanes to I-95 near Courthouse Road/Route 630",
                     "image":"/images/accessing/maps/SouthboundExit-1-2.png",
@@ -5542,20 +5908,36 @@ var entryExits = {
                     ]
                 }
             },
+            "233SD":{
+                "id":"233SD",
+                "label":"Courthouse Road/Route 630",
+                "latitude":"38.422051357101374",
+                "longitude":"-77.42198543776266",
+                "path":"95",
+                "index":"6",
+                "details":{
+                    "title":"Courthouse Road/Route 630",
+                    "image":"/images/flash/access-maps/fredex/TRANS-FredEx-Interchange-Map-2.svg",
+                    "legend": false,
+                    "description":[
+                        "You can get on the northbound 95 Express Lanes from Courthouse Road.",
+                        "You can exit from the southbound 95 Express Lanes to Courthouse Road."
+                    ]
+                }
+            },
             "235SD":{
                 "id":"235SD",
                 "label":"I-95 Near Route 17",
                 "latitude":"38.345422",
                 "longitude":"-77.486364",
                 "path":"95",
-                "index":"0",
+                "index":"1",
                 "details":{
                     "title":"I-95 Near Route 17",
                     "image":"/images/flash/access-maps/fredex/TRANS-FredEx-Interchange-Map-3.png",
                     "legend": false,
                     "description":[
-                        "You can get on the northbound Express Lanes from the I-95 thru lanes near Route 17 by taking the ramp on the far left.",
-                        "Later this year, drivers on the I-95 local lanes will be able to get on the northbound Express Lanes using a flyover ramp.",
+                        "You can get on the northbound Express Lanes from I-95 through or local lanes near Route 17.",
                         "You can exit from the southbound Express Lanes to either the thru or local lanes on I-95 near Route 17. Keep left to exit to the thru lanes or stay right to get to the local lanes to access Route 17 or Route 3.",
                         "This is the last exit for all southbound Express Lanes traffic."
                     ]
@@ -5617,6 +5999,7 @@ var entryExits = {
                 "details":{
                     "title":"Seminary Road",
                     "image":"/images/flash/access-maps/seminary-road/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "From Seminary Road you can travel north or south in the Express Lanes.",
                         "From the northbound or southbound Express Lanes you can exit onto Seminary Road."
@@ -5633,6 +6016,7 @@ var entryExits = {
                 "details":{
                     "title":"Pentagon/Eads Street",
                     "image":"/images/flash/access-maps/eads-street/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "You can get on the northbound 395 Express Lanes from Eads Street or from the regular lanes on 395 near Eads Street.",
                         "You can exit from the northbound 395 Express Lanes to Eads Street  -- exit left to go to the Pentagon, exit right to go Pentagon City.",
@@ -5650,6 +6034,7 @@ var entryExits = {
                 "details":{
                     "title":"Washington Boulevard/Route 27",
                     "image":"/images/flash/access-maps/washignton-boulevard/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "You can exit from the northbound 395 Express Lanes to go north on Route 27 / S. Washington Boulevard.",
                         "You can get on the southbound 395 Express Lanes from southbound Route 27 / S. Washington Boulevard."
@@ -5666,6 +6051,7 @@ var entryExits = {
                 "details":{
                     "title":"Washington D.C.",
                     "image":"/images/flash/access-maps/washignton-dc/large-access-static.png",
+                    "legend": false,
                     "description":[
                         "If you get on the northbound 395 Express Lanes from Eads Street or the regular lanes near Eads Street, you can go toward the 14th Street or I-395 once you\u2019re in DC.",
                         "If you\u2019re coming from DC on the southbound HOV lanes, you can continue your trip onto the southbound 395 Express Lanes once you\u2019re in Virginia."
