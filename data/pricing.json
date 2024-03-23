@@ -2623,7 +2623,7 @@
     },
     {
       "od": "od_1294",
-      "price": "null",
+      "price": "1.50",
       "road": "95",
       "ratetype": "null",
       "time": "2024-03-23 00:00:00",
@@ -2632,7 +2632,7 @@
     },
     {
       "od": "od_1295",
-      "price": "2.70",
+      "price": "4.20",
       "road": "95",
       "ratetype": "null",
       "time": "2024-03-23 00:00:00",
@@ -2641,24 +2641,6 @@
     },
     {
       "od": "od_1296",
-      "price": "4.80",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2024-03-23 00:00:00",
-      "direction": "N",
-      "status": "closed"
-    },
-    {
-      "od": "od_1297",
-      "price": "4.80",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2024-03-23 00:00:00",
-      "direction": "N",
-      "status": "closed"
-    },
-    {
-      "od": "od_1298",
       "price": "6.30",
       "road": "95",
       "ratetype": "null",
@@ -2667,8 +2649,26 @@
       "status": "closed"
     },
     {
+      "od": "od_1297",
+      "price": "6.30",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2024-03-23 00:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1298",
+      "price": "7.80",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2024-03-23 00:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
       "od": "od_1299",
-      "price": "6.55",
+      "price": "8.05",
       "road": "95",
       "ratetype": "null",
       "time": "2024-03-23 00:00:00",
@@ -2677,15 +2677,6 @@
     },
     {
       "od": "od_1300",
-      "price": "6.80",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2024-03-23 00:00:00",
-      "direction": "N",
-      "status": "closed"
-    },
-    {
-      "od": "od_1301",
       "price": "8.30",
       "road": "95",
       "ratetype": "null",
@@ -2694,8 +2685,17 @@
       "status": "closed"
     },
     {
+      "od": "od_1301",
+      "price": "9.80",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2024-03-23 00:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
       "od": "od_1302",
-      "price": "8.55",
+      "price": "10.05",
       "road": "95",
       "ratetype": "null",
       "time": "2024-03-23 00:00:00",
@@ -2704,7 +2704,7 @@
     },
     {
       "od": "od_1303",
-      "price": "8.80",
+      "price": "10.30",
       "road": "95",
       "ratetype": "null",
       "time": "2024-03-23 00:00:00",
