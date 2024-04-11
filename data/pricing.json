@@ -94,7 +94,7 @@
     },
     {
       "od": "od_1010",
-      "price": "null",
+      "price": "1.50",
       "road": "495",
       "ratetype": "null",
       "time": "2024-04-11 03:00:00",
@@ -112,7 +112,7 @@
     },
     {
       "od": "od_1012",
-      "price": "null",
+      "price": "1.95",
       "road": "495",
       "ratetype": "null",
       "time": "2024-04-11 03:00:00",
@@ -139,7 +139,7 @@
     },
     {
       "od": "od_1015",
-      "price": "null",
+      "price": "2.65",
       "road": "495",
       "ratetype": "null",
       "time": "2024-04-11 03:00:00",
