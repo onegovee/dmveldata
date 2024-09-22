@@ -2,7 +2,6 @@ import json
 import requests
 import datetime
 import os
-import sys
 
 today = datetime.datetime.today()
 
@@ -45,8 +44,7 @@ else:
     direction_txt = "NORTH"
 
 # select a specific direction for pricing
-select_direction = sys.argv[1]
-if select_direction == "S": 
+if direction_95 == "S": 
     # 180SO - 495 Express Start (near MD)
     # 2232SO - Washington D.C.
     # 191SO - I-95/I-395/I-495 (Springfield Interchange)
@@ -63,7 +61,7 @@ else:
     # 182ND - Route 267
     # 218NO - I-95 Near Dumfries Road/Route 234
     # 224ND - Washington D.C.
-    select_exit_id = "182ND"
+    select_exit_id = "224ND"
     entry_ramps = idmap_json['ramps'][0]['Northbound'][0]['entries']
     exit_ramps = idmap_json['ramps'][0]['Northbound'][1]['exits']
 timestamp = datetime.datetime.now()
