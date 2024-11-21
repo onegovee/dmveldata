@@ -1713,6 +1713,15 @@
       "status": "closed"
     },
     {
+      "od": "od_1189",
+      "price": "null",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2024-11-21 03:00:00",
+      "direction": "S",
+      "status": "closed"
+    },
+    {
       "od": "od_1190",
       "price": "null",
       "road": "95",
