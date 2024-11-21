@@ -706,7 +706,7 @@
     },
     {
       "od": "od_1078",
-      "price": "1.15",
+      "price": "2.30",
       "road": "495",
       "ratetype": "null",
       "time": "2024-11-21 02:00:00",
@@ -751,6 +751,15 @@
     },
     {
       "od": "od_1083",
+      "price": "null",
+      "road": "395",
+      "ratetype": "null",
+      "time": "2024-11-21 02:00:00",
+      "direction": "S",
+      "status": "closed"
+    },
+    {
+      "od": "od_1084",
       "price": "null",
       "road": "395",
       "ratetype": "null",
