@@ -1,0 +1,97 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: ingest data
+
+Metadata:
+  cfn-lint:
+    config:
+      ignore_checks:
+        - W3002 # This code may only work with 'package' cli command
+
+Parameters:
+  BucketName:
+    Type: String
+  RepoUrl:
+    Type: String
+  RepoParams:
+    Type: String
+  RepoToken:
+    Type: String
+    NoEcho: true
+  ZoneInfo:
+    Type: String
+  AfterFilter:
+    Description: Process data AFTER this timestamp. Overrides last processed timestamp.
+    Type: String
+    Default: ""
+    AllowedPattern: '^$|^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$'
+    ConstraintDescription: "Must be in the format YYYY-MM-DDTHH:MM:SSZ or leave blank"
+  BeforeFilter:
+    Description: Process data BEFORE this timestamp.
+    Type: String
+    Default: ""
+    AllowedPattern: '^$|^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$'
+    ConstraintDescription: "Must be in the format YYYY-MM-DDTHH:MM:SSZ or leave blank"
+
+Resources:
+  RepoSecret:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      SecretString: !Ref RepoToken
+
+  IngestLambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AssumeLambdaExecutionRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+        - arn:aws:iam::aws:policy/CloudWatchLambdaInsightsExecutionRolePolicy
+      Policies:
+        - PolicyName: CustomPermissions
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Action:
+                  - secretsmanager:GetSecretValue
+                Effect: Allow
+                Resource: !Ref RepoSecret
+              - Action:
+                  - s3:ListBucket
+                  - s3:GetObject
+                  - s3:PutObject
+                Effect: Allow
+                Resource: 
+                  - !Sub arn:aws:s3:::${BucketName}
+                  - !Sub arn:aws:s3:::${BucketName}/*
+
+  IngestLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code: lambda_ingest
+      Description: ingest data
+      Runtime: python3.12
+      Role: !GetAtt IngestLambdaExecutionRole.Arn
+      Handler: index.lambda_handler
+      Timeout: 900
+      MemorySize: 512
+      Layers:
+        # https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-integration-lambda-extensions.html#ps-integration-lambda-extensions-add
+        - !Sub arn:aws:lambda:${AWS::Region}:177933569100:layer:AWS-Parameters-and-Secrets-Lambda-Extension:12
+        # https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights-Getting-Started-cloudformation.html
+        - !Sub arn:aws:lambda:${AWS::Region}:580247275435:layer:LambdaInsightsExtension:53
+      Environment:
+        Variables:
+          ACCOUNT_ID: !Ref AWS::AccountId
+          BUCKET_NAME: !Ref BucketName
+          REPO_URL: !Ref RepoUrl
+          REPO_PARAMS: !Ref RepoParams
+          ZONE_INFO: !Ref ZoneInfo
+          SECRET_ARN: !Ref RepoSecret
+          AFTER_FILTER: !Ref AfterFilter
+          BEFORE_FILTER: !Ref BeforeFilter
