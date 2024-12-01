@@ -6,6 +6,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 s3 = boto3.client('s3')
+events = boto3.client('events')
 
 # Get environment variables
 account_id = os.environ['ACCOUNT_ID']
@@ -90,6 +91,18 @@ def get_last_processed_commit():
     return json.loads(resp['Body'].read().decode('utf-8'))
   except s3.exceptions.NoSuchKey:
     return None
+
+def schedule_lambda_invocation(lambda_arn, timestamp):
+  # Convert the UTC timestamp to a cron expression
+  dt = datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
+  cron_expression = f"cron({dt.minute} {dt.hour} {dt.day} {dt.month} ? {dt.year})"
+
+  resp = events.put_rule(
+    Name="invoke-ingest-lambda-scheduled-rule",
+    ScheduleExpression=cron_expression,
+    State='ENABLED',
+    Description=f'Scheduled event rule to invoke ingest lambda at {timestamp}'
+  )
 
 def lambda_handler(event, context):
   function_name = context.function_name()
