@@ -1,12 +1,13 @@
 import boto3
+from botocore.exceptions import ClientError
 import urllib3
 import os
 import json
-from datetime import datetime
-from zoneinfo import ZoneInfo
+from datetime import datetime, timedelta, timezone
 
 s3 = boto3.client('s3')
 events = boto3.client('events')
+lambda_client = boto3.client('lambda')
 
 # Get environment variables
 account_id = os.environ['ACCOUNT_ID']
@@ -92,17 +93,34 @@ def get_last_processed_commit():
   except s3.exceptions.NoSuchKey:
     return None
 
-def schedule_lambda_invocation(lambda_arn, timestamp):
+def invoke_lambda_scheduler(function_name, function_arn, timestamp, next_invoke_reason):
   # Convert the UTC timestamp to a cron expression
   dt = datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
   cron_expression = f"cron({dt.minute} {dt.hour} {dt.day} {dt.month} ? {dt.year})"
 
-  resp = events.put_rule(
-    Name="invoke-ingest-lambda-scheduled-rule",
-    ScheduleExpression=cron_expression,
-    State='ENABLED',
-    Description=f'Scheduled event rule to invoke ingest lambda at {timestamp}'
-  )
+  scheduler_rule_name = "invoke-lambda-scheduler-rule"
+  
+  try:
+    put_rule_resp = events.put_rule(
+      Name=scheduler_rule_name,
+      ScheduleExpression=cron_expression,
+      State='ENABLED',
+      Description=next_invoke_reason
+    )
+    event_rule_arn = put_rule_resp["RuleArn"]
+    lambda_client.add_permission(
+      FunctionName=function_name,
+      StatementId=scheduler_rule_name,
+      Action="lambda:InvokeFunction",
+      Principal="events.amazonaws.com",
+      SourceArn=event_rule_arn,
+    )
+    events.put_targets(
+      Rule=scheduler_rule_name,
+      Targets=[{"Id": function_name, "Arn": function_arn}],
+    )
+  except ClientError as error:
+    print(error)
 
 def lambda_handler(event, context):
   function_name = context.function_name()
@@ -162,12 +180,17 @@ def lambda_handler(event, context):
     if requests_remaining <= rate_limit_threshold:
       print(resp.headers)
       print("Only", requests_remaining, "requests remaining in the current rate limit window.")
-      local_time = datetime.fromtimestamp(int(resp.headers['X-RateLimit-Reset']), tz=ZoneInfo(zone_info))
-      print("Try again after", local_time, "local time")
+      # Round up to the next minute so the next scheduled invoke happens after the reset time
+      rate_limit_reset_time = datetime.fromtimestamp(int(resp.headers['X-RateLimit-Reset']) + 60)
+      invoke_lambda_scheduler(function_name, function_arn, rate_limit_reset_time, "Rate limit reset time")
+      print("Retry event scheduled for", rate_limit_reset_time, "UTC")
       break
     
     time_remaining = context.get_remaining_time_in_millis()
     if time_remaining <= timeout_threshold:
+      current_time = datetime.now(timezone.utc)
+      next_invoke_time = current_time + timedelta(seconds=30)
+      invoke_lambda_scheduler(function_name, function_arn, next_invoke_time, "Lambda timeout retry")
       print("Only", time_remaining/1000, " seconds remaining. Re-invoke lambda to continue.")
       break
 
