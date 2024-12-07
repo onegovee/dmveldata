@@ -17,7 +17,7 @@ Parameters:
   RepoToken:
     Type: String
     NoEcho: true
-  ZoneInfo:
+  SchedulerRuleName:
     Type: String
   AfterFilter:
     Description: Process data AFTER this timestamp. Overrides last processed timestamp.
@@ -31,8 +31,6 @@ Parameters:
     Default: ""
     AllowedPattern: '^$|^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$'
     ConstraintDescription: "Must be in the format YYYY-MM-DDTHH:MM:SSZ or leave blank"
-  SchedulerRuleName:
-    Type: String
 
 Resources:
   RepoSecret:
@@ -104,8 +102,7 @@ Resources:
           BUCKET_NAME: !Ref BucketName
           REPO_URL: !Ref RepoUrl
           REPO_PARAMS: !Ref RepoParams
-          ZONE_INFO: !Ref ZoneInfo
           SECRET_ARN: !Ref RepoSecret
+          SCHEDULER_RULE_NAME: !Ref SchedulerRuleName
           AFTER_FILTER: !Ref AfterFilter
           BEFORE_FILTER: !Ref BeforeFilter
-          SCHEDULER_RULE_NAME: !Ref SchedulerRuleName

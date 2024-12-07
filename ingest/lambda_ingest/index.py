@@ -14,11 +14,10 @@ account_id = os.environ['ACCOUNT_ID']
 bucket_name = os.environ['BUCKET_NAME']
 repo_url = os.environ['REPO_URL']
 repo_params = os.environ['REPO_PARAMS']
-zone_info = os.environ['ZONE_INFO']
 secret_arn = os.environ['SECRET_ARN']
+scheduler_rule_name = os.environ['SCHEDULER_RULE_NAME']
 after_filter = os.environ['AFTER_FILTER']
 before_filter = os.environ['BEFORE_FILTER']
-scheduler_rule_name = os.environ['SCHEDULER_RULE_NAME']
 
 # Defined runtime environment variables
 # https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime
@@ -107,6 +106,10 @@ def invoke_lambda_scheduler(function_name, function_arn, timestamp, next_invoke_
       Description=next_invoke_reason
     )
     event_rule_arn = put_rule_resp["RuleArn"]
+    events.put_targets(
+      Rule=scheduler_rule_name,
+      Targets=[{"Id": function_name, "Arn": function_arn}],
+    )
     lambda_client.add_permission(
       FunctionName=function_name,
       StatementId=scheduler_rule_name,
@@ -114,11 +117,12 @@ def invoke_lambda_scheduler(function_name, function_arn, timestamp, next_invoke_
       Principal="events.amazonaws.com",
       SourceArn=event_rule_arn,
     )
-    events.put_targets(
-      Rule=scheduler_rule_name,
-      Targets=[{"Id": function_name, "Arn": function_arn}],
-    )
+    print("Next invocation scheduled for", timestamp)
+  except lambda_client.exceptions.ResourceConflictException:
+    pass
   except ClientError as error:
+    print(error.response['Error']['Message'])
+  except Exception as error:
     print(error)
 
 def lambda_handler(event, context):
