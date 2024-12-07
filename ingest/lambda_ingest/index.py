@@ -95,8 +95,9 @@ def get_last_processed_commit():
 
 def invoke_lambda_scheduler(function_name, function_arn, timestamp, next_invoke_reason):
   # Convert the UTC timestamp to a cron expression
-  dt = datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
-  cron_expression = f"cron({dt.minute} {dt.hour} {dt.day} {dt.month} ? {dt.year})"
+  # https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-scheduled-rule-pattern.html#eb-cron-expressions
+  ts = timestamp
+  cron_expression = f"cron({ts.minute} {ts.hour} {ts.day} {ts.month} ? {ts.year})"
   
   try:
     put_rule_resp = events.put_rule(
@@ -126,7 +127,7 @@ def invoke_lambda_scheduler(function_name, function_arn, timestamp, next_invoke_
     print(error)
 
 def lambda_handler(event, context):
-  function_name = context.function_name()
+  function_name = context.function_name
   function_arn = f"arn:aws:lambda:{aws_default_region}:{account_id}:function:{function_name}"
   # event_type = event.get('detail-type')
   
