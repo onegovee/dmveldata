@@ -111,6 +111,8 @@ def invoke_lambda_scheduler(function_name, function_arn, timestamp, next_invoke_
       Rule=scheduler_rule_name,
       Targets=[{"Id": function_name, "Arn": function_arn}],
     )
+    print("Next invocation scheduled for", timestamp)
+    # Lambda permissions may already exist so print the next invocation time before trying to add it
     lambda_client.add_permission(
       FunctionName=function_name,
       StatementId=scheduler_rule_name,
@@ -118,8 +120,8 @@ def invoke_lambda_scheduler(function_name, function_arn, timestamp, next_invoke_
       Principal="events.amazonaws.com",
       SourceArn=event_rule_arn,
     )
-    print("Next invocation scheduled for", timestamp)
   except lambda_client.exceptions.ResourceConflictException:
+    print("Lambda permission already exists")
     pass
   except ClientError as error:
     print(error.response['Error']['Message'])
@@ -128,9 +130,12 @@ def invoke_lambda_scheduler(function_name, function_arn, timestamp, next_invoke_
 
 def lambda_handler(event, context):
   print(event)
+  # event_type = event.get('detail-type')
+  
+  # Use context to get info about execution environment
+  # https://docs.aws.amazon.com/lambda/latest/dg/python-context.html
   function_name = context.function_name
   function_arn = f"arn:aws:lambda:{aws_default_region}:{account_id}:function:{function_name}"
-  # event_type = event.get('detail-type')
   
   token = get_secret(secret_arn)
 
