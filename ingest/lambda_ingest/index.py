@@ -127,6 +127,7 @@ def invoke_lambda_scheduler(function_name, function_arn, timestamp, next_invoke_
     print(error)
 
 def lambda_handler(event, context):
+  print(event)
   function_name = context.function_name
   function_arn = f"arn:aws:lambda:{aws_default_region}:{account_id}:function:{function_name}"
   # event_type = event.get('detail-type')
@@ -193,7 +194,7 @@ def lambda_handler(event, context):
     time_remaining = context.get_remaining_time_in_millis()
     if time_remaining <= timeout_threshold:
       current_time = datetime.now(timezone.utc)
-      next_invoke_time = current_time + timedelta(seconds=30)
+      next_invoke_time = current_time + timedelta(seconds=120)
       invoke_lambda_scheduler(function_name, function_arn, next_invoke_time, "Lambda timeout retry")
       print("Only", time_remaining/1000, " seconds remaining. Re-invoke lambda to continue.")
       break
