@@ -193,15 +193,13 @@ def lambda_handler(event, context):
       # Round up to the next minute so the next scheduled invoke happens after the reset time
       rate_limit_reset_time = datetime.fromtimestamp(int(resp.headers['X-RateLimit-Reset']) + 60)
       invoke_lambda_scheduler(function_name, function_arn, rate_limit_reset_time, "Rate limit reset time")
-      print("Retry event scheduled for", rate_limit_reset_time, "UTC")
       break
     
     time_remaining = context.get_remaining_time_in_millis()
     if time_remaining <= timeout_threshold:
-      current_time = datetime.now(timezone.utc)
-      next_invoke_time = current_time + timedelta(seconds=120)
+      print("Only", time_remaining/1000, " seconds remaining before lambda times out.")
+      next_invoke_time = datetime.now(timezone.utc) + timedelta(seconds=120)
       invoke_lambda_scheduler(function_name, function_arn, next_invoke_time, "Lambda timeout retry")
-      print("Only", time_remaining/1000, " seconds remaining. Re-invoke lambda to continue.")
       break
 
   print('Processed', count, "commit/s")
