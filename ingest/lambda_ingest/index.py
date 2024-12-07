@@ -18,6 +18,7 @@ zone_info = os.environ['ZONE_INFO']
 secret_arn = os.environ['SECRET_ARN']
 after_filter = os.environ['AFTER_FILTER']
 before_filter = os.environ['BEFORE_FILTER']
+scheduler_rule_name = os.environ['SCHEDULER_RULE_NAME']
 
 # Defined runtime environment variables
 # https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime
@@ -97,8 +98,6 @@ def invoke_lambda_scheduler(function_name, function_arn, timestamp, next_invoke_
   # Convert the UTC timestamp to a cron expression
   dt = datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
   cron_expression = f"cron({dt.minute} {dt.hour} {dt.day} {dt.month} ? {dt.year})"
-
-  scheduler_rule_name = "invoke-lambda-scheduler-rule"
   
   try:
     put_rule_resp = events.put_rule(

@@ -31,6 +31,8 @@ Parameters:
     Default: ""
     AllowedPattern: '^$|^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$'
     ConstraintDescription: "Must be in the format YYYY-MM-DDTHH:MM:SSZ or leave blank"
+  SchedulerRuleName:
+    Type: String
 
 Resources:
   RepoSecret:
@@ -69,6 +71,17 @@ Resources:
                 Resource: 
                   - !Sub arn:aws:s3:::${BucketName}
                   - !Sub arn:aws:s3:::${BucketName}/*
+              - Action:
+                  - events:PutRule
+                  - events:PutTargets
+                Effect: Allow
+                Resource:
+                  - !Sub arn:aws:events:${AWS::Region}:${AWS::AccountId}:rule/${SchedulerRuleName}
+              - Action:
+                  - lambda:AddPermission
+                Effect: Allow
+                Resource:
+                  - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:*
 
   IngestLambda:
     Type: AWS::Lambda::Function
@@ -95,3 +108,4 @@ Resources:
           SECRET_ARN: !Ref RepoSecret
           AFTER_FILTER: !Ref AfterFilter
           BEFORE_FILTER: !Ref BeforeFilter
+          SCHEDULER_RULE_NAME: !Ref SchedulerRuleName
