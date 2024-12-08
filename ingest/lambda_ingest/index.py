@@ -24,7 +24,7 @@ before_filter = os.environ['BEFORE_FILTER']
 aws_session_token = os.environ['AWS_SESSION_TOKEN']
 aws_default_region = os.environ['AWS_DEFAULT_REGION']
 
-rate_limit_threshold = 32
+rate_limit_threshold = 64
 timeout_threshold = 30000
 last_processed_commit_key = "last_processed_commit.json"
 http = urllib3.PoolManager()
