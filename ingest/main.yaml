@@ -2,6 +2,17 @@ AWSTemplateFormatVersion: 2010-09-09
 Transform: AWS::Serverless-2016-10-31
 Description: ingest data
 
+Globals:
+  Api:
+    OpenApiVersion: 3.0.1
+    TracingEnabled: True
+    MethodSettings:
+      - ResourcePath: "/*"
+        HttpMethod: "*"
+        MetricsEnabled: True
+        LoggingLevel: INFO
+        DataTraceEnabled: True
+
 Parameters:
   BucketName:
     Type: String
@@ -10,6 +21,9 @@ Parameters:
   RepoParams:
     Type: String
   RepoToken:
+    Type: String
+    NoEcho: true
+  HookAuth:
     Type: String
     NoEcho: true
   SchedulerRuleName:
@@ -32,7 +46,51 @@ Resources:
     Type: AWS::SecretsManager::Secret
     Properties:
       SecretString: !Ref RepoToken
-  
+  HookSecret:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      SecretString: !Ref HookAuth
+
+  IngestApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Ingest
+      
+  AuthorizerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda_authorizer
+      Description: not your typical authorizer
+      Runtime: python3.12
+      Handler: index.lambda_handler
+      Timeout: 60
+      Layers:
+        # https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-integration-lambda-extensions.html#ps-integration-lambda-extensions-add
+        - arn:aws:lambda:us-east-1:177933569100:layer:AWS-Parameters-and-Secrets-Lambda-Extension:12
+      Environment:
+        Variables:
+          HOOK_SECRET_ARN: !Ref HookSecret
+          INGEST_LAMBDA_ARN: !GetAtt IngestFunction.Arn
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Method: POST
+            Path: /
+            RestApiId: !Ref IngestApi
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - Version: 2012-10-17
+          Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource: !Ref HookSecret
+            - Effect: Allow
+              Action:
+                - lambda:InvokeFunction
+              Resource: !GetAtt IngestFunction.Arn
+
   IngestFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -44,7 +102,7 @@ Resources:
       MemorySize: 512
       Layers:
         # https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-integration-lambda-extensions.html#ps-integration-lambda-extensions-add
-        - !Sub arn:aws:lambda:${AWS::Region}:177933569100:layer:AWS-Parameters-and-Secrets-Lambda-Extension:12
+        - arn:aws:lambda:us-east-1:177933569100:layer:AWS-Parameters-and-Secrets-Lambda-Extension:12
         # https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Lambda-Insights-Getting-Started-cloudformation.html
         - !Sub arn:aws:lambda:${AWS::Region}:580247275435:layer:LambdaInsightsExtension:53
       Environment:
@@ -53,19 +111,20 @@ Resources:
           BUCKET_NAME: !Ref BucketName
           REPO_URL: !Ref RepoUrl
           REPO_PARAMS: !Ref RepoParams
-          SECRET_ARN: !Ref RepoSecret
+          REPO_SECRET_ARN: !Ref RepoSecret
           SCHEDULER_RULE_NAME: !Ref SchedulerRuleName
           AFTER_FILTER: !Ref AfterFilter
           BEFORE_FILTER: !Ref BeforeFilter
       Policies:
-        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-        - arn:aws:iam::aws:policy/CloudWatchLambdaInsightsExecutionRolePolicy
+        - AWSLambdaBasicExecutionRole
+        - CloudWatchLambdaInsightsExecutionRolePolicy
         - Version: 2012-10-17
           Statement:
             - Action:
                 - secretsmanager:GetSecretValue
               Effect: Allow
-              Resource: !Ref RepoSecret
+              Resource: 
+                - !Ref RepoSecret
             - Action:
                 - s3:ListBucket
                 - s3:GetObject

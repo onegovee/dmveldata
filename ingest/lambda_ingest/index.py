@@ -14,7 +14,7 @@ account_id = os.environ['ACCOUNT_ID']
 bucket_name = os.environ['BUCKET_NAME']
 repo_url = os.environ['REPO_URL']
 repo_params = os.environ['REPO_PARAMS']
-secret_arn = os.environ['SECRET_ARN']
+repo_secret_arn = os.environ['REPO_SECRET_ARN']
 scheduler_rule_name = os.environ['SCHEDULER_RULE_NAME']
 after_filter = os.environ['AFTER_FILTER']
 before_filter = os.environ['BEFORE_FILTER']
@@ -130,14 +130,13 @@ def invoke_lambda_scheduler(function_name, function_arn, timestamp, next_invoke_
 
 def lambda_handler(event, context):
   print(event)
-  # event_type = event.get('detail-type')
   
   # Use context to get info about execution environment
   # https://docs.aws.amazon.com/lambda/latest/dg/python-context.html
   function_name = context.function_name
   function_arn = f"arn:aws:lambda:{aws_default_region}:{account_id}:function:{function_name}"
   
-  token = get_secret(secret_arn)
+  token = get_secret(repo_secret_arn)
 
   headers = {
     "Authorization": f"Bearer {token}",
@@ -204,20 +203,3 @@ def lambda_handler(event, context):
 
   print('Processed', count, "commit/s")
   print('Last commit', sha, date)
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  
