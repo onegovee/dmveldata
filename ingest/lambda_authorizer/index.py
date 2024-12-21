@@ -53,28 +53,22 @@ def lambda_handler(event, context):
 
   secret = get_secret(hook_secret_arn)
   
-  if verify_signature(secret, payload, signature) and "pricing_updates" in json_body['ref']:
-    try:
-      invoke_lambda_response = lambda_client.invoke(
-        FunctionName=ingest_lambda_arn,
-        InvocationType='Event',
-        Payload=json.dumps(invoke_event)
-      )
-    except ClientError as error:
-      print(error)
-      msg = error.response['Error']['Message']
-      return {
-        'statusCode': 500,
-        'body': json.dumps(msg)
-      }
-    
-    print(invoke_lambda_response)
-    return {
-      'statusCode': 200,
-      'body': json.dumps('Success')
-    }
+  if verify_signature(secret, payload, signature):
+    if "pricing_updates" in json_body['ref']:
+      try:
+        invoke_lambda_response = lambda_client.invoke(
+          FunctionName=ingest_lambda_arn,
+          InvocationType='Event',
+          Payload=json.dumps(invoke_event)
+        )
+      except ClientError as error:
+        print(error)
+        msg = error.response['Error']['Message']
+        return {'statusCode': 500,'body': json.dumps(msg)}
+      
+      print(invoke_lambda_response)
+      return {'statusCode': 200,'body': json.dumps('Success')}
+    else:
+      return {'statusCode': 202,'body': json.dumps('Invalid')}
   else:
-    return {
-      'statusCode': 403,
-      'body': json.dumps('Forbidden')
-    }
+    return {'statusCode': 401,'body': json.dumps('Unauthorized')}
