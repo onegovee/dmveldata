@@ -40,6 +40,10 @@ Parameters:
     Default: ""
     AllowedPattern: '^$|^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$'
     ConstraintDescription: "Must be in the format YYYY-MM-DDTHH:MM:SSZ or leave blank"
+  ExportUrl:
+    Type: String
+  ExportVarName:
+    Type: String
 
 Resources:
   RepoSecret:
@@ -62,7 +66,7 @@ Resources:
       CodeUri: lambda_authorizer
       Description: not your typical authorizer
       Runtime: python3.12
-      Handler: index.lambda_handler
+      Handler: authorizer.lambda_handler
       Timeout: 60
       Layers:
         # https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-integration-lambda-extensions.html#ps-integration-lambda-extensions-add
@@ -97,7 +101,7 @@ Resources:
       CodeUri: lambda_ingest
       Description: ingest data
       Runtime: python3.12
-      Handler: index.lambda_handler
+      Handler: ingest.lambda_handler
       Timeout: 900
       MemorySize: 512
       Layers:
@@ -144,3 +148,41 @@ Resources:
               Effect: Allow
               Resource:
                 - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:*
+
+  ExportFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda_export
+      Description: export data
+      Runtime: nodejs20.x
+      Handler: export.lambda_handler
+      Timeout: 60
+      Environment:
+        Variables:
+          BUCKET_NAME: !Ref BucketName
+          EXPORT_URL: !Ref ExportUrl
+          EXPORT_VAR_NAME: !Ref ExportVarName
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - Version: 2012-10-17
+          Statement:
+            - Action:
+                - s3:PutObject
+              Effect: Allow
+              Resource: 
+                - !Sub arn:aws:s3:::${BucketName}/*
+  ExportSchedule:
+    Type: AWS::Events::Rule
+    Properties:
+      ScheduleExpression: 'rate(1 day)'
+      State: ENABLED
+      Targets:
+        - Arn: !GetAtt ExportFunction.Arn
+          Id: ExportTarget
+  ExportPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref ExportFunction
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt ExportSchedule.Arn

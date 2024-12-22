@@ -68,12 +68,13 @@ def upload_to_s3(filename, sha, date, url):
   get_date = datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
   date_prefix = get_date.strftime("%Y/%m")
   prefix = f"{filename}/{date_prefix}/{sha}.json"
-  s3.put_object(
-    Bucket=bucket_name, 
-    Key=prefix,
-    Body=content,
-    ContentType='application/json'
-  )
+  for object in prefix, filename:
+    s3.put_object(
+      Bucket=bucket_name, 
+      Key=object,
+      Body=content,
+      ContentType='application/json'
+    )
 
 def update_last_processed_commit(commit):
   s3.put_object(
@@ -176,6 +177,9 @@ def lambda_handler(event, context):
       print('No data to process')
       return
 
+    # going backwards, the next page is the prev page
+    # set 'url' to the prev page if there is one
+    # if there is none then you're on the last/first page
     page_links = resp.headers.get('link')
     if page_links:
       if 'rel="prev"' in page_links:
