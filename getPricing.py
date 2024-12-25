@@ -1,103 +1,127 @@
 import json
 import requests
-import datetime
-import os
+import argparse
 
-today = datetime.datetime.today()
+parser = argparse.ArgumentParser()
+parser.add_argument("--entry", type=str)
+parser.add_argument("--exit", type=str)
+parser.add_argument("--direction", type=str, choices=['N','S',''])
+args = parser.parse_args()
 
-pricing_timestamp = datetime.datetime.fromtimestamp(os.path.getmtime('data/pricing.json'))
-pricing_age = today - pricing_timestamp
-#print(pricing_age.total_seconds())
-if pricing_age.total_seconds() > 300:
-    pricing_url = "https://www.expresslanes.com/maps-api/infra-price-confirmed-all"
-    pricing_response = requests.get(pricing_url)
-    # store JSON response from url in data
-    pricing_json = pricing_response.json()
-    # store pretty JSON response in a file
-    with open( "data/pricing.json" , "w" ) as pricing_file:
-        json.dump(pricing_json, pricing_file, indent=2)
+# get pricing and write to file
+pricing_url = "https://www.expresslanes.com/maps-api/infra-price-confirmed-all"
+pricing_response = requests.get(pricing_url)
+# store JSON response from url in data
+pricing_json = pricing_response.json()
+# store pretty JSON response in a file
+with open( "data/pricing.json" , "w" ) as pricing_file:
+    json.dump(pricing_json, pricing_file, indent=2)
 
-entry_exit_timestamp = datetime.datetime.fromtimestamp(os.path.getmtime('data/entry_exit.js'))
-entry_exit_age = today - entry_exit_timestamp
-#print(entry_exit_age.days)
-if entry_exit_age.days > 0:
-    entry_exit_url = "https://www.expresslanes.com/themes/custom/transurbangroup/js/on-the-road/entry_exit.js"
-    entry_exit_response = requests.get(entry_exit_url)
-    open('data/entry_exit.js', 'wb').write(entry_exit_response.content)
+# get entry/exit OD map and write to file
+entry_exit_url = "https://www.expresslanes.com/themes/custom/transurbangroup/js/on-the-road/entry_exit.js"
+entry_exit_response = requests.get(entry_exit_url)
+open('data/entry_exit.js', 'wb').write(entry_exit_response.content)
 
+# read pricing file
 with open('data/pricing.json') as pricing_file:
     pricing_data=pricing_file.read()
 pricing_json = json.loads(pricing_data)
 
-with open('data/idmap.json') as idmap_file:
-    idmap_data=idmap_file.read()
-idmap_json = json.loads(idmap_data)
+# read OD map file
+with open('data/entryExits.json') as odmap_file:
+    odmap_data=odmap_file.read()
+odmap_json = json.loads(odmap_data)
 
-# parse which direction I-95 is going
-direction_95 = pricing_json['direction_95']
-#print(direction_95)
-if direction_95 == "S":
-    direction_txt = "SOUTH"
-elif direction_95 == "C":
-    direction_txt = "CHANGING"
+def get_direction():
+  # get direction code from pricing data/json
+  direction_code = pricing_json['direction_95']
+  # print(direction_code)
+
+  # get I-95/395 direction text from 'lane status' URL
+  direction_txt_url = "https://www.expresslanes.com/maps-api/lane-status"
+  get_direction_txt_response = requests.get(direction_txt_url)
+  direction_txt_json = get_direction_txt_response.json()
+  direction_txt = direction_txt_json['road95and395']
+  # print(direction_txt)
+
+  pricing_timestamp = pricing_json['response'][0]['time']
+  direction_msg = f"\nAs of {pricing_timestamp}, the I-95/395 direction is {direction_code}: \'{direction_txt}\'\n"
+  return direction_code, direction_msg
+
+direction_code, direction_msg = get_direction()
+print(direction_msg)
+
+# Override direction if manually entered
+if args.direction:
+  direction_code = args.direction
+# If lanes are changing then a direction must be entered
+elif direction_code == "C":
+  direction_code = input("\tLanes are changing! Enter a direction to continue [S/N]: ")
 else:
-    direction_txt = "NORTH"
+  pass
 
-# select a specific direction for pricing
-if direction_95 == "S": 
-    # 180SO - 495 Express Start (near MD)
-    # 2232SO - Washington D.C.
-    # 191SO - I-95/I-395/I-495 (Springfield Interchange)
-    # 217SD - I-95 Near Dumfries Road/Route 234
-    select_entry_id = "191SO"
-    select_exit_id = "217SD"
-    entry_ramps = idmap_json['ramps'][1]['Southbound'][0]['entries']
-    exit_ramps = idmap_json['ramps'][1]['Southbound'][1]['exits']
-else: 
-    select_entry_id = "218NO"
-    # 191ND - I-95/I-395/I-495 (Springfield Interchange)
-    # 181ND - 495 Express End (near MD)
-    # 186ND - Route 7 (Leesburg Pike)
-    # 182ND - Route 267
-    # 218NO - I-95 Near Dumfries Road/Route 234
-    # 224ND - Washington D.C.
-    select_exit_id = "224ND"
-    entry_ramps = idmap_json['ramps'][0]['Northbound'][0]['entries']
-    exit_ramps = idmap_json['ramps'][0]['Northbound'][1]['exits']
-timestamp = datetime.datetime.now()
-print("As of", pricing_timestamp, "I-95 express lanes direction is", direction_txt)
+if direction_code == "S":
+  all_entries = odmap_json['Southbound']['entries']
+  all_exits = odmap_json['Southbound']['exits']
+elif direction_code == "N":
+  all_entries = odmap_json['Northbound']['entries']
+  all_exits = odmap_json['Northbound']['exits']
+else:
+  raise "Missing direction!"
 
-pricing_response = pricing_json['response']
-# pricing_detail = pricing_json['debug_db_ramps_price']
-#print(pricing_response)
-for entry in entry_ramps:
-    if (select_entry_id == entry.get('id')):
-        entry_name = entry.get('name')
-        print('ENTRY: ' + entry_name + '\n')
-        exits = entry.get('exits')
-        #print(exitids)
-        for exit in exits:
-            #print(exit.get('id'))
-            if (exit.get('id') == select_exit_id):
-                ods = exit.get('ods')
-                #print(exit.get('ods'))
-                for od in ods:
-                    #print(od)
-                    for price in pricing_response:
-                        #print(price)
-                        if (od in price.get('od')):
-                            od_id = od
-                            #print(od_id)
-                            od_price = price.get('price')
-                            if (od_price == 'null'):
-                                od_price = "0"
-                            #print(od_price)
-                            od_status = price.get('status')
-                            od_road = price.get('road')
-                            print(od_road,od_price,od_status)
+if args.entry:
+  entry_id = args.entry
+  entry = all_entries.get(entry_id)
+  if entry:
+    entry_label = entry['label']
+    print("Entry ID selected: ", entry_id, entry_label)
+  else:
+    raise Exception("Couldn't find that entry!")
+else:
+  for entry_id in all_entries:
+    entry_label = all_entries[entry_id]['label']
+    print(entry_id, entry_label)
+  entry_id = input("\tEnter entry ID: ")
+  #print(entry_id)
 
-# get the exit ramp name
-for exit in exit_ramps:
-    if (select_exit_id in exit.get('id')):
-        exit_name = exit.get('name')
-        print('\nEXIT: ' + exit_name)
+# Only get exits for the selected entry
+if args.exit:
+  exit_id = args.exit
+  exit = all_exits.get(exit_id)
+  if exit:
+    exit_label = exit['label']
+    print("Exit ID selected: ", exit_id, exit_label)
+  else:
+    raise Exception("Couldn't find that exit!")
+else:
+  entry = all_entries.get(entry_id)
+  if entry:
+    exits = entry['exits']
+    for exit in exits:
+      exit_id = exit['id']
+      exit_label = all_exits[exit_id]['label']
+      print(exit_id, exit_label)
+    exit_id = input("\tEnter exit ID: ")
+    #print(exit_id)
+  else:
+    raise Exception("Couldn't find that entry!")
+
+# Get the ODs for the exit ID selected if it exists
+od_exits = all_entries[entry_id]['exits']
+ods = []
+for exit in od_exits:
+  id = exit['id']
+  if id == exit_id:
+    ods = exit['ods']
+
+if ods:
+  for od in ods:
+    od_id = "od_" + od
+    for ramp in pricing_json['response']:
+      if od_id == ramp['od']:
+        road = ramp['road']
+        price = ramp['price']
+        status = ramp['status']
+        print(road, status, price)
+else:
+  raise Exception("Couldn't find that exit!")
