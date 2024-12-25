@@ -69,6 +69,6 @@ def lambda_handler(event, context):
       print(invoke_lambda_response)
       return {'statusCode': 200,'body': json.dumps('Success')}
     else:
-      return {'statusCode': 202,'body': json.dumps('Invalid')}
+      return {'statusCode': 202,'body': json.dumps('These are not the drones you\'re looking for')}
   else:
     return {'statusCode': 401,'body': json.dumps('Unauthorized')}
