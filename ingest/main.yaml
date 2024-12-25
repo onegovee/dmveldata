@@ -155,7 +155,7 @@ Resources:
       CodeUri: lambda_export
       Description: export data
       Runtime: nodejs20.x
-      Handler: export.lambda_handler
+      Handler: exports.lambda_handler
       Timeout: 60
       Environment:
         Variables:

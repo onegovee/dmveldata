@@ -1,4 +1,5 @@
 const { PutObjectCommand, S3Client, S3ServiceException } = require("@aws-sdk/client-s3");
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const https = require('https');
 const vm = require('vm');
 
@@ -9,6 +10,13 @@ let exportVarName = process.env.EXPORT_VAR_NAME
 
 exports.lambda_handler = async (event) => {
   console.log(event);
+  
+  // add some jitter
+  const randNum = Math.floor(Math.random() * 50) + 1;
+  const randMs = randNum * 1000;
+  console.log(`Sleeping for ${randNum} seconds...`);
+  await sleep(randMs);
+  
   try {
     // download and extract json content
     const downloadContent = await downloadFile(exportUrl);
