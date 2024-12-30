@@ -44,6 +44,10 @@ Parameters:
     Type: String
   ExportVarName:
     Type: String
+  StatusUrl:
+    Type: String
+  StatusKey:
+    Type: String
 
 Resources:
   RepoSecret:
@@ -153,9 +157,9 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: lambda_export
-      Description: export data
+      Description: export var
       Runtime: nodejs20.x
-      Handler: exports.lambda_handler
+      Handler: export.handler
       Timeout: 60
       Environment:
         Variables:
@@ -186,3 +190,51 @@ Resources:
       Action: lambda:InvokeFunction
       Principal: events.amazonaws.com
       SourceArn: !GetAtt ExportSchedule.Arn
+
+  StatusTopic:
+    Type: AWS::SNS::Topic
+  StatusFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda_status
+      Description: status updates
+      Runtime: python3.10
+      Handler: status.lambda_handler
+      Timeout: 60
+      Environment:
+        Variables:
+          BUCKET_NAME: !Ref BucketName
+          STATUS_URL: !Ref StatusUrl
+          STATUS_KEY: !Ref StatusKey
+          STATUS_TOPIC_ARN: !Ref StatusTopic
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - Version: 2012-10-17
+          Statement:
+            - Action:
+                - s3:ListBucket
+                - s3:GetObject
+                - s3:PutObject
+              Effect: Allow
+              Resource: 
+                - !Sub arn:aws:s3:::${BucketName}
+                - !Sub arn:aws:s3:::${BucketName}/*
+            - Effect: Allow
+              Action:
+                - sns:Publish
+              Resource: !Ref StatusTopic
+  StatusSchedule:
+    Type: AWS::Events::Rule
+    Properties:
+      ScheduleExpression: 'rate(5 minutes)'
+      State: ENABLED
+      Targets:
+        - Arn: !GetAtt StatusFunction.Arn
+          Id: StatusTarget
+  StatusPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref StatusFunction
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt StatusSchedule.Arn
