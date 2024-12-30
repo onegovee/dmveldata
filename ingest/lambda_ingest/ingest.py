@@ -26,7 +26,7 @@ aws_default_region = os.environ['AWS_DEFAULT_REGION']
 
 rate_limit_threshold = 64
 timeout_threshold = 30000
-last_processed_commit_key = "last_processed_commit.json"
+last_processed_commit_key = "last-processed-commit.json"
 http = urllib3.PoolManager()
 
 # get secret using lambda extension

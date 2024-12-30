@@ -8,14 +8,13 @@ let bucketName = process.env.BUCKET_NAME
 let exportUrl = process.env.EXPORT_URL
 let exportVarName = process.env.EXPORT_VAR_NAME
 
-exports.lambda_handler = async (event) => {
-  console.log(event);
+exports.handler = async (event, context) => {
+  console.log("EVENT: \n" + JSON.stringify(event, null, 2));
   
   // add some jitter
   const randNum = Math.floor(Math.random() * 50) + 1;
-  const randMs = randNum * 1000;
   console.log(`Sleeping for ${randNum} seconds...`);
-  await sleep(randMs);
+  await sleep(randNum * 1000);
   
   try {
     // download and extract json content
@@ -42,7 +41,7 @@ exports.lambda_handler = async (event) => {
   } catch (caught) {
     if (caught instanceof S3ServiceException) {
       console.error(
-        `Error from S3 while uploading object to ${bucketName}.  ${caught.name}: ${caught.message}`,
+        `Error from S3 while uploading object to ${bucketName}. ${caught.name}: ${caught.message}`,
       );
     } else {
       throw caught;
