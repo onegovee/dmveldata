@@ -16,14 +16,31 @@ import os
 import urllib3
 import json
 import boto3
+from twilio.rest import Client as TwilioClient
+from twilio.base.exceptions import TwilioRestException
+import re
 
+s3 = boto3.client('s3')
+
+# Get environment variables
 bucket_name = os.environ['BUCKET_NAME']
 status_url = os.environ['STATUS_URL']
 status_key = os.environ['STATUS_KEY']
-status_topic_arn = os.environ['STATUS_TOPIC_ARN']
+status_msg_from = os.environ['STATUS_MSG_FROM']
+status_msg_to = os.environ['STATUS_MSG_TO']
+msg_secret_arn = os.environ['MSG_SECRET_ARN']
 
-s3 = boto3.client('s3')
-sns = boto3.client('sns')
+# Defined runtime environment variables
+aws_session_token = os.environ['AWS_SESSION_TOKEN']
+
+def get_secret(secret_arn):
+  http = urllib3.PoolManager()
+  headers = {"X-Aws-Parameters-Secrets-Token": aws_session_token}
+  url = "http://localhost:2773/secretsmanager/get?secretId=" + secret_arn
+  resp = http.request("GET", url, headers=headers)
+  data = json.loads(resp.data)
+  secret = data['SecretString']
+  return secret
 
 def lambda_handler(event, context):
   print(event)
@@ -58,11 +75,30 @@ def lambda_handler(event, context):
         ContentType='application/json'
       )
       print(s3_put_resp)
-      sns_publish_resp = sns.publish(
-        TopicArn=status_topic_arn,
-        Message=msg
-      )
-      print(sns_publish_resp)
+
+      msg_secret = get_secret(msg_secret_arn)
+      msg_api_key = msg_secret['api_key']
+      msg_api_secret = msg_secret['api_secret']
+      msg_account_sid = msg_secret['account_sid']
+      msg_client = TwilioClient(msg_api_key, msg_api_secret, msg_account_sid)
+
+      recipient_format = r'^\+?[1-9]\d{1,14}$'
+      recipient_list = status_msg_to.split(',')
+      for recipient in recipient_list:
+        if re.match(recipient_format, recipient):
+          try:
+            message = msg_client.messages.create(
+              from_=status_msg_from,
+              body=msg,
+              to=recipient
+            )
+            print(message)
+          except TwilioRestException as e:
+            print("Twilio API error:", e)
+          except Exception as e:
+            print("Other exception:", e)
+        else:
+          print(recipient, "is not a valid recipient")
   
   except Exception as error:
     print(error)
