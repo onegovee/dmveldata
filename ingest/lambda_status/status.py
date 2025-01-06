@@ -76,7 +76,7 @@ def lambda_handler(event, context):
       )
       print(s3_put_resp)
 
-      msg_secret = get_secret(msg_secret_arn)
+      msg_secret = json.loads(get_secret(msg_secret_arn))
       msg_api_key = msg_secret['api_key']
       msg_api_secret = msg_secret['api_secret']
       msg_account_sid = msg_secret['account_sid']
