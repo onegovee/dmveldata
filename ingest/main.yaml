@@ -205,6 +205,22 @@ Resources:
       Action: lambda:InvokeFunction
       Principal: events.amazonaws.com
       SourceArn: !GetAtt ExportSchedule.Arn
+  ExportErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: ExportErrorAlarm
+      MetricName: Errors
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300 
+      EvaluationPeriods: 1
+      Threshold: 1 
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref ExportFunction
+      AlarmActions:
+        - !Ref SnsTopic
 
   StatusFunction:
     Type: AWS::Serverless::Function
@@ -257,7 +273,6 @@ Resources:
       Action: lambda:InvokeFunction
       Principal: events.amazonaws.com
       SourceArn: !GetAtt StatusSchedule.Arn
-
   StatusErrorAlarm:
     Type: AWS::CloudWatch::Alarm
     Properties:
