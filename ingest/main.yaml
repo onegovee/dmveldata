@@ -74,7 +74,10 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       StageName: Ingest
-      
+  
+  SnsTopic:
+    Type: AWS::SNS::Topic
+
   AuthorizerFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -253,3 +256,20 @@ Resources:
       Action: lambda:InvokeFunction
       Principal: events.amazonaws.com
       SourceArn: !GetAtt StatusSchedule.Arn
+
+  StatusErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: StatusErrorAlarm
+      MetricName: Errors
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300 
+      EvaluationPeriods: 1
+      Threshold: 1 
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref StatusFunction
+      AlarmActions:
+        - !Ref SnsTopic
