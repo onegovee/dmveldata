@@ -1,6 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
 Transform: AWS::Serverless-2016-10-31
-Description: ingest data
 
 Globals:
   Api:
@@ -14,8 +13,6 @@ Globals:
         DataTraceEnabled: True
 
 Parameters:
-  BucketName:
-    Type: String
   RepoUrl:
     Type: String
   RepoParams:
@@ -26,9 +23,14 @@ Parameters:
   HookAuth:
     Type: String
     NoEcho: true
+  StageName:
+    Type: String
   MsgAuth:
+    Description: Lambda layer and version created outside cfn
     Type: String
     NoEcho: true
+  MsgLayer:
+    Type: String
   SchedulerRuleName:
     Type: String
   AfterFilter:
@@ -69,18 +71,45 @@ Resources:
     Type: AWS::SecretsManager::Secret
     Properties:
       SecretString: !Ref MsgAuth
-
-  IngestApi:
-    Type: AWS::Serverless::Api
-    Properties:
-      StageName: Ingest
   
   SnsTopic:
     Type: AWS::SNS::Topic
+    Properties:
+      TopicName: !Sub "${AWS::StackName}-alerts"
+      DisplayName: !Sub "${AWS::StackName} alert"
 
+  AuthorizerRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub ${AWS::StackName}-authorizer-role
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AssumeLambdaExecutionRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: AuthorizerPolicy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - secretsmanager:GetSecretValue
+                Resource: !Ref HookSecret
+              - Effect: Allow
+                Action:
+                  - lambda:InvokeFunction
+                Resource: !GetAtt IngestFunction.Arn
   AuthorizerFunction:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: !Sub ${AWS::StackName}-authorizer-function
+      Role: !GetAtt AuthorizerRole.Arn
       CodeUri: lambda_authorizer
       Description: not your typical authorizer
       Runtime: python3.12
@@ -100,22 +129,60 @@ Resources:
             Method: POST
             Path: /
             RestApiId: !Ref IngestApi
-      Policies:
-        - AWSLambdaBasicExecutionRole
-        - Version: 2012-10-17
-          Statement:
-            - Effect: Allow
-              Action:
-                - secretsmanager:GetSecretValue
-              Resource: !Ref HookSecret
-            - Effect: Allow
-              Action:
-                - lambda:InvokeFunction
-              Resource: !GetAtt IngestFunction.Arn
 
+  IngestRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub ${AWS::StackName}-ingest-role
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AssumeLambdaExecutionRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+        - arn:aws:iam::aws:policy/CloudWatchLambdaInsightsExecutionRolePolicy
+      Policies:
+        - PolicyName: ingest-policy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Action:
+                  - secretsmanager:GetSecretValue
+                Effect: Allow
+                Resource: 
+                  - !Ref RepoSecret
+              - Action:
+                  - s3:ListBucket
+                  - s3:GetObject
+                  - s3:PutObject
+                Effect: Allow
+                Resource: 
+                  - !Sub arn:aws:s3:::${AWS::StackName}
+                  - !Sub arn:aws:s3:::${AWS::StackName}/*
+              - Action:
+                  - events:PutRule
+                  - events:PutTargets
+                Effect: Allow
+                Resource:
+                  - !Sub arn:aws:events:${AWS::Region}:${AWS::AccountId}:rule/${SchedulerRuleName}
+              - Action:
+                  - lambda:AddPermission
+                Effect: Allow
+                Resource:
+                  - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:*
+  IngestApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: !Ref StageName
   IngestFunction:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: !Sub ${AWS::StackName}-ingest-function
+      Role: !GetAtt IngestRole.Arn
       CodeUri: lambda_ingest
       Description: ingest data
       Runtime: python3.12
@@ -130,46 +197,44 @@ Resources:
       Environment:
         Variables:
           ACCOUNT_ID: !Ref AWS::AccountId
-          BUCKET_NAME: !Ref BucketName
+          BUCKET_NAME: !Ref AWS::StackName
           REPO_URL: !Ref RepoUrl
           REPO_PARAMS: !Ref RepoParams
           REPO_SECRET_ARN: !Ref RepoSecret
           SCHEDULER_RULE_NAME: !Ref SchedulerRuleName
           AFTER_FILTER: !Ref AfterFilter
           BEFORE_FILTER: !Ref BeforeFilter
-      Policies:
-        - AWSLambdaBasicExecutionRole
-        - CloudWatchLambdaInsightsExecutionRolePolicy
-        - Version: 2012-10-17
-          Statement:
-            - Action:
-                - secretsmanager:GetSecretValue
-              Effect: Allow
-              Resource: 
-                - !Ref RepoSecret
-            - Action:
-                - s3:ListBucket
-                - s3:GetObject
-                - s3:PutObject
-              Effect: Allow
-              Resource: 
-                - !Sub arn:aws:s3:::${BucketName}
-                - !Sub arn:aws:s3:::${BucketName}/*
-            - Action:
-                - events:PutRule
-                - events:PutTargets
-              Effect: Allow
-              Resource:
-                - !Sub arn:aws:events:${AWS::Region}:${AWS::AccountId}:rule/${SchedulerRuleName}
-            - Action:
-                - lambda:AddPermission
-              Effect: Allow
-              Resource:
-                - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:*
 
+  ExportRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub ${AWS::StackName}-export-role
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AssumeLambdaExecutionRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: ExportPolicy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                Effect: Allow
+                Resource: 
+                  - !Sub arn:aws:s3:::${AWS::StackName}/*
   ExportFunction:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: !Sub ${AWS::StackName}-export-function
+      Role: !GetAtt ExportRole.Arn
       CodeUri: lambda_export
       Description: export var
       Runtime: nodejs20.x
@@ -177,19 +242,9 @@ Resources:
       Timeout: 60
       Environment:
         Variables:
-          BUCKET_NAME: !Ref BucketName
+          BUCKET_NAME: !Ref AWS::StackName
           EXPORT_URL: !Ref ExportUrl
-          EXPORT_VAR_NAME: !Ref ExportVarName
-      Policies:
-        - AWSLambdaBasicExecutionRole
-        - Version: 2012-10-17
-          Statement:
-            - Action:
-                - s3:GetObject
-                - s3:PutObject
-              Effect: Allow
-              Resource: 
-                - !Sub arn:aws:s3:::${BucketName}/*
+          EXPORT_VAR_NAME: !Ref ExportVarName 
   ExportSchedule:
     Type: AWS::Events::Rule
     Properties:
@@ -222,42 +277,59 @@ Resources:
       AlarmActions:
         - !Ref SnsTopic
 
+  StatusRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub ${AWS::StackName}-status-role
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AssumeLambdaExecutionRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: StatusPolicy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Action:
+                  - s3:ListBucket
+                  - s3:GetObject
+                  - s3:PutObject
+                Effect: Allow
+                Resource: 
+                  - !Sub arn:aws:s3:::${AWS::StackName}
+                  - !Sub arn:aws:s3:::${AWS::StackName}/*
+              - Effect: Allow
+                Action:
+                  - secretsmanager:GetSecretValue
+                Resource: !Ref MsgSecret
   StatusFunction:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: !Sub ${AWS::StackName}-status-function
+      Role: !GetAtt StatusRole.Arn
       CodeUri: lambda_status
       Description: status updates
       Runtime: python3.10
       Handler: status.lambda_handler
       Timeout: 60
       Layers:
-        - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:layer:twilio-layer:2
+        - !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:layer:${MsgLayer}
         # https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-integration-lambda-extensions.html#ps-integration-lambda-extensions-add
         - arn:aws:lambda:us-east-1:177933569100:layer:AWS-Parameters-and-Secrets-Lambda-Extension:12
       Environment:
         Variables:
-          BUCKET_NAME: !Ref BucketName
+          BUCKET_NAME: !Ref AWS::StackName
           STATUS_URL: !Ref StatusUrl
           STATUS_KEY: !Ref StatusKey
           STATUS_MSG_FROM: !Ref StatusMsgFrom
           STATUS_MSG_TO: !Ref StatusMsgTo
           MSG_SECRET_ARN: !Ref MsgSecret
-      Policies:
-        - AWSLambdaBasicExecutionRole
-        - Version: 2012-10-17
-          Statement:
-            - Action:
-                - s3:ListBucket
-                - s3:GetObject
-                - s3:PutObject
-              Effect: Allow
-              Resource: 
-                - !Sub arn:aws:s3:::${BucketName}
-                - !Sub arn:aws:s3:::${BucketName}/*
-            - Effect: Allow
-              Action:
-                - secretsmanager:GetSecretValue
-              Resource: !Ref MsgSecret
   StatusSchedule:
     Type: AWS::Events::Rule
     Properties:
@@ -289,3 +361,8 @@ Resources:
           Value: !Ref StatusFunction
       AlarmActions:
         - !Ref SnsTopic
+
+Outputs:
+  ApiInvokeUrl:
+    Description: api invoke url
+    Value: !Sub https://${IngestApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}
