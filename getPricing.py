@@ -15,7 +15,7 @@ pricing_response = requests.get(pricing_url)
 pricing_json = pricing_response.json()
 # store pretty JSON response in a file
 with open( "data/pricing.json" , "w" ) as pricing_file:
-    json.dump(pricing_json, pricing_file, indent=2)
+  json.dump(pricing_json, pricing_file, indent=2)
 
 # get entry/exit OD map and write to file
 entry_exit_url = "https://www.expresslanes.com/themes/custom/transurbangroup/js/on-the-road/entry_exit.js"
@@ -24,12 +24,12 @@ open('data/entry_exit.js', 'wb').write(entry_exit_response.content)
 
 # read pricing file
 with open('data/pricing.json') as pricing_file:
-    pricing_data=pricing_file.read()
+  pricing_data=pricing_file.read()
 pricing_json = json.loads(pricing_data)
 
 # read OD map file
 with open('data/entryExits.json') as odmap_file:
-    odmap_data=odmap_file.read()
+  odmap_data=odmap_file.read()
 odmap_json = json.loads(odmap_data)
 
 def get_direction():
