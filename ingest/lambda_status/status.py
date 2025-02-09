@@ -101,4 +101,4 @@ def lambda_handler(event, context):
           print(recipient, "is not a valid recipient")
   
   except Exception as error:
-    print(error)
+    raise error
