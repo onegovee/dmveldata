@@ -1,7 +1,189 @@
 {
-  "error": "116",
-  "error_text": "No pricing in DB",
-  "response": [],
+  "error": "0",
+  "error_text": "",
+  "response": [
+    {
+      "od": "od_1014",
+      "price": "5.20",
+      "road": "495",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "open"
+    },
+    {
+      "od": "od_1023",
+      "price": "1.70",
+      "road": "495",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "open"
+    },
+    {
+      "od": "od_1076",
+      "price": "3.20",
+      "road": "495",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1083",
+      "price": "null",
+      "road": "395",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1087",
+      "price": "3.20",
+      "road": "495",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "open"
+    },
+    {
+      "od": "od_1182",
+      "price": "3.20",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1228",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1231",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1234",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1237",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1240",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1243",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1246",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1249",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1255",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1258",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1261",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1267",
+      "price": "4.10",
+      "road": "395",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1281",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1302",
+      "price": "4.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-02-11 22:00:00",
+      "direction": "N",
+      "status": "closed"
+    }
+  ],
+  "direction_95": "S",
   "#cache": {
     "max-age": 3600,
     "contexts": [
