@@ -345,6 +345,15 @@
       "status": "open"
     },
     {
+      "od": "od_1037",
+      "price": "1.30",
+      "road": "495",
+      "ratetype": "null",
+      "time": "2025-07-02 21:00:00",
+      "direction": "N",
+      "status": "open"
+    },
+    {
       "od": "od_1038",
       "price": "1.10",
       "road": "495",
@@ -536,6 +545,15 @@
     {
       "od": "od_1059",
       "price": "1.40",
+      "road": "495",
+      "ratetype": "null",
+      "time": "2025-07-02 21:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1060",
+      "price": "0.85",
       "road": "495",
       "ratetype": "null",
       "time": "2025-07-02 21:00:00",
