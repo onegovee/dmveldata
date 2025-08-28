@@ -2491,6 +2491,7 @@ var entryExits = {
                 "details":{
                     "title":"Lee Highway (Route 29) Access",
                     "image":"/images/flash/access-maps/lee-highway/large-access-static.jpg",
+                    "video": "https://www.youtube-nocookie.com/embed/D8tQJ8dv4gM",
                     "description":[
                         "From Lee Highway you can travel south in the Express Lanes.",
                         "From the northbound Express Lanes you can exit onto Lee Highway."
@@ -3789,6 +3790,7 @@ var entryExits = {
                 "details":{
                     "title":"Lee Highway (Route 29) Access",
                     "image":"/images/flash/access-maps/lee-highway/large-access-static.jpg",
+                    "video": "https://www.youtube-nocookie.com/embed/D8tQJ8dv4gM",
                     "description":[
                         "From Lee Highway you can travel south in the Express Lanes.",
                         "From the northbound Express Lanes you can exit onto Lee Highway."
@@ -5805,6 +5807,7 @@ var entryExits = {
                 "details":{
                     "title":"Lee Highway (Route 29) Access",
                     "image":"/images/flash/access-maps/lee-highway/large-access-static.jpg",
+                    "video": "https://www.youtube-nocookie.com/embed/D8tQJ8dv4gM",
                     "description":[
                         "From Lee Highway you can travel south in the Express Lanes.",
                         "From the northbound Express Lanes you can exit onto Lee Highway."
