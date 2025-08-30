@@ -354,6 +354,15 @@
       "status": "open"
     },
     {
+      "od": "od_1038",
+      "price": "1.30",
+      "road": "495",
+      "ratetype": "null",
+      "time": "2025-08-30 10:00:00",
+      "direction": "N",
+      "status": "open"
+    },
+    {
       "od": "od_1039",
       "price": "4.85",
       "road": "495",
@@ -2704,6 +2713,15 @@
     },
     {
       "od": "od_1303",
+      "price": "null",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-08-30 10:00:00",
+      "direction": "N",
+      "status": "closed"
+    },
+    {
+      "od": "od_1304",
       "price": "null",
       "road": "95",
       "ratetype": "null",
