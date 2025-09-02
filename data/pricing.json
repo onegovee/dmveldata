@@ -21,6 +21,15 @@
       "status": "open"
     },
     {
+      "od": "od_1001",
+      "price": "null",
+      "road": "495",
+      "ratetype": "null",
+      "time": "2025-09-02 18:00:00",
+      "direction": "N",
+      "status": "open"
+    },
+    {
       "od": "od_1002",
       "price": "3.15",
       "road": "495",
