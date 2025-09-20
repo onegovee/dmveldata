@@ -1299,6 +1299,15 @@
       "status": "open"
     },
     {
+      "od": "od_1143",
+      "price": "3.85",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-09-20 15:00:00",
+      "direction": "N",
+      "status": "open"
+    },
+    {
       "od": "od_1144",
       "price": "1.75",
       "road": "95",
@@ -2290,6 +2299,15 @@
     },
     {
       "od": "od_1257",
+      "price": "3.85",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-09-20 15:00:00",
+      "direction": "N",
+      "status": "open"
+    },
+    {
+      "od": "od_1257",
       "price": "5.60",
       "road": "95",
       "ratetype": "null",
@@ -2299,7 +2317,25 @@
     },
     {
       "od": "od_1258",
+      "price": "3.85",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-09-20 15:00:00",
+      "direction": "N",
+      "status": "open"
+    },
+    {
+      "od": "od_1258",
       "price": "8.45",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2025-09-20 15:00:00",
+      "direction": "N",
+      "status": "open"
+    },
+    {
+      "od": "od_1259",
+      "price": "3.85",
       "road": "95",
       "ratetype": "null",
       "time": "2025-09-20 15:00:00",
