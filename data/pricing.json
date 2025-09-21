@@ -193,6 +193,15 @@
     },
     {
       "od": "od_1021",
+      "price": "4.10",
+      "road": "495",
+      "ratetype": "null",
+      "time": "2025-09-21 09:00:00",
+      "direction": "N",
+      "status": "open"
+    },
+    {
+      "od": "od_1021",
       "price": "5.15",
       "road": "495",
       "ratetype": "null",
@@ -2416,7 +2425,7 @@
     },
     {
       "od": "od_1271",
-      "price": "1.75",
+      "price": "3.50",
       "road": "395",
       "ratetype": "null",
       "time": "2025-09-21 09:00:00",
