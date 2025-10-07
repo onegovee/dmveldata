@@ -2722,7 +2722,7 @@
     },
     {
       "od": "od_1305",
-      "price": "1.80",
+      "price": "null",
       "road": "95",
       "ratetype": "null",
       "time": "2025-10-07 01:00:00",
@@ -2731,7 +2731,7 @@
     },
     {
       "od": "od_1306",
-      "price": "2.95",
+      "price": "null",
       "road": "95",
       "ratetype": "null",
       "time": "2025-10-07 01:00:00",
@@ -2740,7 +2740,7 @@
     },
     {
       "od": "od_1307",
-      "price": "4.95",
+      "price": "null",
       "road": "95",
       "ratetype": "null",
       "time": "2025-10-07 01:00:00",
