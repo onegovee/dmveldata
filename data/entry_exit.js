@@ -4,6 +4,32 @@ var newEntryExits;
 var entryExits = {
     "Northbound":{
         "entries":{
+            "182NO":{
+                "id":"182NO",
+                "label":"Route 267",
+                "latitude":"38.9312742061897340",
+                "longitude":"-77.2102408782958500",
+                "path":"495North",
+                "index":"9",
+                "details":{
+                    "title":"Route 267 Access",
+                    "image":"/images/flash/access-maps/dulles-toll-road/large-access-static.jpg",
+                    "legend": false,
+                    "description":[
+                      "From Route 267 eastbound, you can go north or south in the Express Lanes.",
+                      "From Route 267 westbound, you can go north in the Express Lanes.",
+                      "From the northbound and southbound Express Lanes, you can exit onto Route 267 to go west."
+                    ]
+                },
+                "exits":[
+                    {
+                        "id":"181ND",
+                        "ods":[
+                            "1038"
+                        ]
+                    }
+                ]
+            },
             "183NO":{
                 "id":"183NO",
                 "label":"Jones Branch Drive/Route 123",
@@ -14,6 +40,7 @@ var entryExits = {
                 "details":{
                     "title":"Jones Branch Drive/Route 123 Access",
                     "image":"/images/flash/access-maps/jones-branch-drive/large-access-static.jpg",
+                    "legend": false,
                     "description":[
                         "From Jones Branch Drive/Route 123 in Tysons Corner you can travel north or south in the Express Lanes.",
                         "From the northbound or southbound Express Lanes you can exit onto Jones Branch Drive/Route 123."
@@ -2383,17 +2410,20 @@ var entryExits = {
         "exits":{
             "181ND":{
                 "id":"181ND",
-                "label":"495 Express End (near MD)",
-                "latitude":"38.9454436760183900",
-                "longitude":"-77.2024934699058600",
+                "label":"495 Express Lanes End/George Wash. Mem. Pkwy.",
+                "latitude":"38.96359745429534",
+                "longitude":"-77.1835978404755",
                 "path":"495North",
                 "index":"0",
                 "details":{
-                    "title":"495 Express Start/End (near MD)",
+                    "title":"495 Express Lanes End/George Wash. Mem. Pkwy.",
                     "image":"/images/flash/access-maps/northern-beltway/large-access-static.jpg",
+                    "legend": false,
                     "description":[
-                        "You can enter the southbound Express Lanes from the Beltway approximately one mile after the George Washington Parkway/Georgetown Pike exit.",
-                        "From the northbound Express Lanes you can merge back onto the Beltway after the 267/Dulles Toll Road Express Lanes exit."
+                        "You can enter the southbound Express Lanes from the regular lanes soon after the American Legion Bridge.",
+                        "From the northbound Express Lanes, you can merge back onto the regular lanes just before the American Legion Bridge.",
+                        "From the George Wash. Mem. Pkwy. southbound, you can go south in the Express Lanes.",
+                        "From the northbound Express Lanes, you can exit onto the northbound George Wash. Mem. Pkwy."
                     ]
                 }
             },
@@ -2407,9 +2437,11 @@ var entryExits = {
                 "details":{
                     "title":"Route 267 Access",
                     "image":"/images/flash/access-maps/dulles-toll-road/large-access-static.jpg",
+                    "legend": false,
                     "description":[
-                        "From Route 267 eastbound you can travel south in the Express Lanes.",
-                        "From the northbound and southbound Express Lanes you can exit onto Route 267 (Dulles Toll Road and Airport Access Road) to go west."
+                      "From Route 267 eastbound, you can go north or south in the Express Lanes.",
+                      "From Route 267 westbound, you can go north in the Express Lanes.",
+                      "From the northbound and southbound Express Lanes, you can exit onto Route 267 to go west."
                     ]
                 }
             },
@@ -2716,20 +2748,30 @@ var entryExits = {
         "entries":{
             "180SO":{
                 "id":"180SO",
-                "label":"495 Express Start (near MD)",
-                "latitude":"38.9455448505459500",
-                "longitude":"-77.2028367926597100",
+                "label":"495 Express Lanes Start/Georg Wash. Mem. Pkwy.",
+                "latitude":"38.96381405674141",
+                "longitude":"-77.18357071793291",
                 "path":"495South",
                 "index":"0",
                 "details":{
-                    "title":"495 Express Start/End (near MD)",
+                    "title":"495 Express Lanes Start/Georg Wash. Mem. Pkwy.",
                     "image":"/images/flash/access-maps/northern-beltway/large-access-static.jpg",
+                    "legend": false,
                     "description":[
-                        "You can enter the southbound Express Lanes from the Beltway approximately one mile after the George Washington Parkway/Georgetown Pike exit.",
-                        "From the northbound Express Lanes you can merge back ontothe Beltway after the 267/Dulles Toll Road Express Lanes exit."
+                        "You can enter the southbound Express Lanes from the regular lanes soon after the American Legion Bridge.",
+                        "From the northbound Express Lanes, you can merge back onto the regular lanes just before the American Legion Bridge.",
+                        "From the George Wash. Mem. Pkwy. southbound, you can go south in the Express Lanes.",
+                        "From the northbound Express Lanes, you can exit onto the northbound George Wash. Mem. Pkwy."
                     ]
                 },
                 "exits":[
+                    {
+                        "id":"182SD",
+                        "ods":[
+                            "1046"
+                        ]
+                    },
+
                     {
                         "id":"184SD",
                         "ods":[
@@ -2910,9 +2952,11 @@ var entryExits = {
                 "details":{
                     "title":"Route 267 Access",
                     "image":"/images/flash/access-maps/dulles-toll-road/large-access-static.jpg",
+                    "legend": false,
                     "description":[
-                        "From Route 267 eastbound you can travel south in the Express Lanes.",
-                        "From the northbound and southbound Express Lanes you can exit onto Route 267 (Dulles Toll Road and Airport Access Road) to go west."
+                      "From Route 267 eastbound, you can go north or south in the Express Lanes.",
+                      "From Route 267 westbound, you can go north in the Express Lanes.",
+                      "From the northbound and southbound Express Lanes, you can exit onto Route 267 to go west."
                     ]
                 },
                 "exits":[
@@ -5584,6 +5628,24 @@ var entryExits = {
             },
         },
         "exits":{
+            "182SD":{
+                "id":"182SD",
+                "label":"Route 267",
+                "latitude":"38.9323257899124900",
+                "longitude":"-77.2131376640319300",
+                "path":"495South",
+                "index":"9",
+                "details":{
+                    "title":"Route 267 Access",
+                    "image":"/images/flash/access-maps/dulles-toll-road/large-access-static.jpg",
+                    "legend": false,
+                    "description":[
+                      "From Route 267 eastbound, you can go north or south in the Express Lanes.",
+                      "From Route 267 westbound, you can go north in the Express Lanes.",
+                      "From the northbound and southbound Express Lanes, you can exit onto Route 267 to go west."
+                    ]
+                },
+            },
             "184SD":{
                 "id":"184SD",
                 "label":"Jones Branch Drive/Route 123",
@@ -5701,17 +5763,20 @@ var entryExits = {
             },
             "1819ND":{
                 "id":"1819ND",
-                "label":"495 Express End (near MD)",
-                "latitude":"38.9454436760183900",
-                "longitude":"-77.2024934699058600",
+                "label":"495 Express Lanes End/George Wash. Mem. Pkwy.",
+                "latitude":"38.96359745429534",
+                "longitude":"-77.1835978404755",
                 "path":"495North",
                 "index":"0",
                 "details":{
-                    "title":"495 Express Start/End (near MD)",
+                    "title":"495 Express Lanes End/George Wash. Mem. Pkwy.",
                     "image":"/images/flash/access-maps/northern-beltway/large-access-static.jpg",
+                    "legend": false,
                     "description":[
-                        "You can enter the southbound Express Lanes from the Beltway approximately one mile after the George Washington Parkway/Georgetown Pike exit.",
-                        "From the northbound Express Lanes you can merge back onto the Beltway after the 267/Dulles Toll Road Express Lanes exit."
+                        "You can enter the southbound Express Lanes from the regular lanes soon after the American Legion Bridge.",
+                        "From the northbound Express Lanes, you can merge back onto the regular lanes just before the American Legion Bridge.",
+                        "From the George Wash. Mem. Pkwy. southbound, you can go south in the Express Lanes.",
+                        "From the northbound Express Lanes, you can exit onto the northbound George Wash. Mem. Pkwy."
                     ]
                 }
             },
@@ -5725,9 +5790,11 @@ var entryExits = {
                 "details":{
                     "title":"Route 267 Access",
                     "image":"/images/flash/access-maps/dulles-toll-road/large-access-static.jpg",
+                    "legend": false,
                     "description":[
-                        "From Route 267 eastbound you can travel south in the Express Lanes.",
-                        "Fromthe northbound and southbound Express Lanes you can exit onto Route 267 (DullesToll Road and Airport Access Road) to go west."
+                      "From Route 267 eastbound, you can go north or south in the Express Lanes.",
+                      "From Route 267 westbound, you can go north in the Express Lanes.",
+                      "From the northbound and southbound Express Lanes, you can exit onto Route 267 to go west."
                     ]
                 }
             },
@@ -5741,6 +5808,7 @@ var entryExits = {
                 "details":{
                     "title":"Jones Branch Drive/Route 123 Access",
                     "image":"/images/flash/access-maps/jones-branch-drive/large-access-static.jpg",
+                    "legend": false,
                     "description":[
                         "From Jones Branch Drive/Route 123 in Tysons Corner you can travel north or south in the Express Lanes.",
                         "From the northbound or southbound Express Lanes you can exit onto Jones Branch Drive/Route 123."
