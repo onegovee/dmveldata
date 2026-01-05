@@ -237,7 +237,7 @@ Resources:
       Role: !GetAtt ExportRole.Arn
       CodeUri: lambda_export
       Description: export var
-      Runtime: nodejs20.x
+      Runtime: nodejs24.x
       Handler: export.handler
       Timeout: 60
       Environment:
