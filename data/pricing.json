@@ -850,12 +850,12 @@
     },
     {
       "od": "od_1094",
-      "price": "null",
+      "price": "5.90",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1095",
@@ -864,43 +864,43 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1096",
-      "price": "null",
+      "price": "9.05",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1097",
-      "price": "1.80",
+      "price": "10.90",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1098",
-      "price": "2.50",
+      "price": "11.60",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1099",
-      "price": "3.10",
+      "price": "12.20",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1100",
@@ -909,7 +909,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1101",
@@ -918,7 +918,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1102",
@@ -927,34 +927,34 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1103",
-      "price": "7.45",
+      "price": "7.50",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1104",
-      "price": "8.15",
+      "price": "8.20",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1105",
-      "price": "8.75",
+      "price": "8.80",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1106",
@@ -963,7 +963,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1107",
@@ -972,7 +972,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1108",
@@ -981,34 +981,34 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1109",
-      "price": "6.65",
+      "price": "6.70",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1110",
-      "price": "7.35",
+      "price": "7.40",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1111",
-      "price": "7.95",
+      "price": "8.00",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1112",
@@ -1017,7 +1017,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1113",
@@ -1026,7 +1026,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1114",
@@ -1035,34 +1035,34 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1115",
-      "price": "5.65",
+      "price": "5.70",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1116",
-      "price": "6.35",
+      "price": "6.40",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1117",
-      "price": "6.95",
+      "price": "7.00",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1118",
@@ -1071,7 +1071,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1119",
@@ -1080,34 +1080,34 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1120",
-      "price": "4.95",
+      "price": "5.00",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1121",
-      "price": "5.65",
+      "price": "5.70",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1122",
-      "price": "6.25",
+      "price": "6.30",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1123",
@@ -1116,7 +1116,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1124",
@@ -1125,34 +1125,34 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1125",
-      "price": "4.35",
+      "price": "4.40",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1126",
-      "price": "5.05",
+      "price": "5.10",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1127",
-      "price": "5.65",
+      "price": "5.70",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1128",
@@ -1161,7 +1161,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1129",
@@ -1170,34 +1170,34 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1130",
-      "price": "4.25",
+      "price": "4.30",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1131",
-      "price": "4.95",
+      "price": "5.00",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1132",
-      "price": "5.55",
+      "price": "5.60",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1133",
@@ -1206,38 +1206,38 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1134",
-      "price": "3.65",
+      "price": "3.70",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1135",
-      "price": "4.35",
+      "price": "4.40",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1136",
-      "price": "4.95",
+      "price": "5.00",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1137",
-      "price": "1.80",
+      "price": "1.85",
       "road": "null",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
@@ -1246,7 +1246,7 @@
     },
     {
       "od": "od_1138",
-      "price": "2.50",
+      "price": "2.55",
       "road": "null",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
@@ -1255,7 +1255,7 @@
     },
     {
       "od": "od_1139",
-      "price": "3.10",
+      "price": "3.15",
       "road": "null",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
@@ -1269,7 +1269,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1141",
@@ -1278,7 +1278,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1142",
@@ -1287,7 +1287,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1143",
@@ -1296,7 +1296,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1144",
@@ -1305,7 +1305,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1145",
@@ -1314,7 +1314,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1146",
@@ -1323,7 +1323,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1147",
@@ -2047,219 +2047,219 @@
     },
     {
       "od": "od_1227",
-      "price": "4.85",
+      "price": "13.95",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1228",
-      "price": "6.15",
+      "price": "15.25",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1229",
-      "price": "6.35",
+      "price": "15.45",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1230",
-      "price": "10.50",
+      "price": "10.55",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1231",
-      "price": "11.80",
+      "price": "11.85",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1232",
-      "price": "12.00",
+      "price": "12.05",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1233",
-      "price": "9.70",
+      "price": "9.75",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1234",
-      "price": "11.00",
+      "price": "11.05",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1235",
-      "price": "11.20",
+      "price": "11.25",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1236",
-      "price": "8.70",
+      "price": "8.75",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1237",
-      "price": "10.00",
+      "price": "10.05",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1238",
-      "price": "10.20",
+      "price": "10.25",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1239",
-      "price": "8.00",
+      "price": "8.05",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1240",
-      "price": "9.30",
+      "price": "9.35",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1241",
-      "price": "9.50",
+      "price": "9.55",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1242",
-      "price": "7.40",
+      "price": "7.45",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1243",
-      "price": "8.70",
+      "price": "8.75",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1244",
-      "price": "8.90",
+      "price": "8.95",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1245",
-      "price": "7.30",
+      "price": "7.35",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1246",
-      "price": "8.60",
+      "price": "8.65",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1247",
-      "price": "8.80",
+      "price": "8.85",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1248",
-      "price": "6.70",
+      "price": "6.75",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1249",
-      "price": "8.00",
+      "price": "8.05",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1250",
-      "price": "8.20",
+      "price": "8.25",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1254",
@@ -2268,7 +2268,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1255",
@@ -2277,7 +2277,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1256",
@@ -2286,7 +2286,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1257",
@@ -2295,7 +2295,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1258",
@@ -2304,7 +2304,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1259",
@@ -2313,7 +2313,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1260",
@@ -2322,7 +2322,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1261",
@@ -2331,7 +2331,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1262",
@@ -2340,7 +2340,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1263",
@@ -2349,7 +2349,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1264",
@@ -2358,7 +2358,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1265",
@@ -2367,7 +2367,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1266",
@@ -2376,7 +2376,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1267",
@@ -2385,7 +2385,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1268",
@@ -2394,7 +2394,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1269",
@@ -2403,7 +2403,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1270",
@@ -2412,7 +2412,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1271",
@@ -2421,7 +2421,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1272",
@@ -2430,7 +2430,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1273",
@@ -2439,16 +2439,16 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1274",
-      "price": "null",
+      "price": "10.05",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1275",
@@ -2457,70 +2457,70 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1276",
-      "price": "null",
+      "price": "13.20",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1277",
-      "price": "1.80",
+      "price": "15.05",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1278",
-      "price": "2.50",
+      "price": "15.75",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1279",
-      "price": "3.10",
+      "price": "16.35",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1280",
-      "price": "4.85",
+      "price": "18.10",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1281",
-      "price": "6.15",
+      "price": "19.40",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1282",
-      "price": "6.35",
+      "price": "19.60",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1283",
@@ -2614,12 +2614,12 @@
     },
     {
       "od": "od_1293",
-      "price": "null",
+      "price": "6.35",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1294",
@@ -2628,7 +2628,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1295",
@@ -2637,7 +2637,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1296",
@@ -2646,7 +2646,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1297",
@@ -2655,70 +2655,70 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1298",
-      "price": "1.80",
+      "price": "1.85",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1299",
-      "price": "2.50",
+      "price": "2.55",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1300",
-      "price": "3.10",
+      "price": "3.15",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1301",
-      "price": "4.85",
+      "price": "4.90",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1302",
-      "price": "6.15",
+      "price": "6.20",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1303",
-      "price": "6.35",
+      "price": "6.40",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1304",
-      "price": "null",
+      "price": "2.20",
       "road": "95",
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1305",
@@ -2862,7 +2862,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1349",
@@ -2871,7 +2871,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1350",
@@ -2880,7 +2880,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1351",
@@ -2889,7 +2889,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_1352",
@@ -2898,7 +2898,7 @@
       "ratetype": "null",
       "time": "2026-01-06 02:00:00",
       "direction": "N",
-      "status": "closed"
+      "status": "open"
     },
     {
       "od": "od_9999",
@@ -2910,7 +2910,7 @@
       "status": "null"
     }
   ],
-  "direction_95": "C",
+  "direction_95": "N",
   "#cache": {
     "max-age": 3600,
     "contexts": [
