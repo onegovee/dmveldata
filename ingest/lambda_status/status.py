@@ -42,6 +42,31 @@ def get_secret(secret_arn):
   secret = data['SecretString']
   return secret
 
+def send_notification(recipient_list, msg):
+  msg_secret = json.loads(get_secret(msg_secret_arn))
+  msg_api_key = msg_secret['api_key']
+  msg_api_secret = msg_secret['api_secret']
+  msg_account_sid = msg_secret['account_sid']
+  msg_client = TwilioClient(msg_api_key, msg_api_secret, msg_account_sid)
+
+  recipient_format = r'^\+?[1-9]\d{1,14}$'
+  
+  for recipient in recipient_list:
+    if re.match(recipient_format, recipient):
+      try:
+        message = msg_client.messages.create(
+          from_=status_msg_from,
+          body=msg,
+          to=recipient
+        )
+        print(message)
+      except TwilioRestException as e:
+        print("Twilio API error:", e)
+      except Exception as e:
+        print("Other exception:", e)
+    else:
+      print(recipient, "is not a valid recipient")
+
 def lambda_handler(event, context):
   print(event)
 
@@ -76,29 +101,12 @@ def lambda_handler(event, context):
       )
       print(s3_put_resp)
 
-      msg_secret = json.loads(get_secret(msg_secret_arn))
-      msg_api_key = msg_secret['api_key']
-      msg_api_secret = msg_secret['api_secret']
-      msg_account_sid = msg_secret['account_sid']
-      msg_client = TwilioClient(msg_api_key, msg_api_secret, msg_account_sid)
-
-      recipient_format = r'^\+?[1-9]\d{1,14}$'
-      recipient_list = status_msg_to.split(',')
-      for recipient in recipient_list:
-        if re.match(recipient_format, recipient):
-          try:
-            message = msg_client.messages.create(
-              from_=status_msg_from,
-              body=msg,
-              to=recipient
-            )
-            print(message)
-          except TwilioRestException as e:
-            print("Twilio API error:", e)
-          except Exception as e:
-            print("Other exception:", e)
-        else:
-          print(recipient, "is not a valid recipient")
+      if status_msg_to:
+        recipient_list = status_msg_to.split(',')
+        send_notification(recipient_list, msg)
+      else:
+        print("No recipients to notify!")
+        return
   
   except Exception as error:
     raise error
