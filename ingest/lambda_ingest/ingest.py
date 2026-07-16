@@ -1,6 +1,7 @@
 import boto3
 from botocore.exceptions import ClientError
-import urllib3
+import urllib.request
+from urllib.parse import urlencode
 import os
 import json
 from datetime import datetime, timedelta, timezone
@@ -27,15 +28,15 @@ aws_default_region = os.environ['AWS_DEFAULT_REGION']
 rate_limit_threshold = 64
 timeout_threshold = 30000
 last_processed_commit_key = "last-processed-commit.json"
-http = urllib3.PoolManager()
 
 # get secret using lambda extension
 # https://community.aws/content/2fiemtp5A1NuweZ3yD8wpj7oYqy
 def get_secret(secret_arn):
   headers = {"X-Aws-Parameters-Secrets-Token": aws_session_token}
   url = "http://localhost:2773/secretsmanager/get?secretId=" + secret_arn
-  resp = http.request("GET", url, headers=headers)
-  data = json.loads(resp.data)
+  req = urllib.request.Request(url, headers=headers)
+  with urllib.request.urlopen(req) as resp:
+    data = json.loads(resp.read().decode())
   secret = data['SecretString']
   return secret
 
@@ -51,8 +52,9 @@ def get_page_url(link_header, page):
 
 def get_raw_url(sha, headers):
   url = f"{repo_url}/commits/{sha}"
-  resp = http.request("GET", url, headers=headers)
-  data = json.loads(resp.data.decode())
+  req = urllib.request.Request(url, headers=headers)
+  with urllib.request.urlopen(req) as resp:
+    data = json.loads(resp.read().decode())
   for file in data.get('files', []):
     filename = file['filename']
     if filename == "data/pricing.json":
@@ -61,10 +63,10 @@ def get_raw_url(sha, headers):
 
 def upload_to_s3(filename, sha, date, url):
   try:
-    resp = http.request("GET", url)
+    with urllib.request.urlopen(url) as resp:
+      content = resp.read().decode()
   except Exception as error:
     raise error
-  content = resp.data.decode()
   get_date = datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
   date_prefix = get_date.strftime("%Y/%m")
   prefix = f"{filename}/{date_prefix}/{sha}.json"
@@ -151,18 +153,22 @@ def lambda_handler(event, context):
   if before_filter: params["until"] = before_filter
   print(params)
 
-  url = f"{repo_url}/commits?{urllib3.request.urlencode(params)}"
-  resp = http.request("GET", url, headers=headers)
-  page_links = resp.headers.get('link')
+  url = f"{repo_url}/commits?{urlencode(params)}"
+  req = urllib.request.Request(url, headers=headers)
+  with urllib.request.urlopen(req) as resp:
+    page_links = resp.headers.get('link')
   if page_links:
     # do the last page first
     url = get_page_url(page_links, "last")
   
   count = 0
   while url:
-    resp = http.request("GET", url, headers=headers)
-    print(resp.headers)
-    data = json.loads(resp.data.decode())
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req) as resp:
+      page_links = resp.headers.get('link')
+      headers_dict = dict(resp.headers)
+      data = json.loads(resp.read().decode())
+    print(headers_dict)
     if data:
       data.reverse()
       for commit in data:
@@ -180,7 +186,7 @@ def lambda_handler(event, context):
     # going backwards, the next page is the prev page
     # set 'url' to the prev page if there is one
     # if there is none then you're on the last/first page
-    page_links = resp.headers.get('link')
+    page_links = headers_dict.get('link')
     if page_links:
       if 'rel="prev"' in page_links:
         url = get_page_url(page_links, "prev")
@@ -189,12 +195,12 @@ def lambda_handler(event, context):
     else:
       break
     
-    requests_remaining = int(resp.headers['X-RateLimit-Remaining'])
+    requests_remaining = int(headers_dict['X-RateLimit-Remaining'])
     if requests_remaining <= rate_limit_threshold:
-      print(resp.headers)
+      print(headers_dict)
       print("Only", requests_remaining, "requests remaining in the current rate limit window.")
       # Round up to the next minute so the next scheduled invoke happens after the reset time
-      rate_limit_reset_time = datetime.fromtimestamp(int(resp.headers['X-RateLimit-Reset']) + 60)
+      rate_limit_reset_time = datetime.fromtimestamp(int(headers_dict['X-RateLimit-Reset']) + 60)
       invoke_lambda_scheduler(function_name, function_arn, rate_limit_reset_time, "Rate limit reset time")
       break
     
