@@ -264,13 +264,13 @@ var entryExits = {
             },
             "191NO":{
                 "id":"191NO",
-                "label":"I-95/I-395/I-495 (Springfield Interchange)",
-                "latitude":"38.8009051677159900",
-                "longitude":"-77.2083548981476000",
+                "label":"I-495 Near Braddock Road",
+                "latitude":"38.79989025571085",
+                "longitude":"-77.20560591900075",
                 "path":"495North",
                 "index":"129",
                 "details":{
-                    "title":"I-95/I-395/I-495 (Springfield Interchange) Access",
+                    "title":"I-495 Near Braddock Road Access",
                     "image":"/images/flash/access-maps/springfield-interchange/large-access-static.jpg",
                     "description":[
                         "You can enter the northbound Express Lanes approximately one and a half miles after the Springfield Interchange.",
@@ -319,21 +319,50 @@ var entryExits = {
                         "ods":[
                             "1009"
                         ]
+                    },
+                    {
+                        "id":"223ND",
+                        "ods":[
+                            "1083",
+                            "1376"
+                        ]
+                    },
+                    {
+                        "id":"224ND",
+                        "ods":[
+                            "1083",
+                            "1377"
+                        ]
+                    },
+                    {
+                        "id":"222ND",
+                        "ods":[
+                            "1083",
+                            "1375"
+                        ]
+                    },
+                    {
+                        "id":"201ND",
+                        "ods":[
+                            "1083",
+                            "1374"
+                        ]
                     }
                 ]
             },
             "192NO":{
                 "id":"192NO",
-                "label":"I-95/I-395 Express Lanes ramps",
-                "latitude":"38.7915690410429100",
-                "longitude":"-77.1716321322967500",
+                "label":"I-495/I-95 Near Van Dorn Street",
+                "latitude":"38.79347384215561",
+                "longitude":"-77.15413222704926",
                 "path":"495North",
                 "index":"151",
                 "details":{
-                    "title":"I-95/I-395 Express Lanes ramps",
+                    "title":"I-495/I-95 Near Van Dorn Street",
                     "image":"/images/flash/access-maps/i95/large-access-static.jpg",
                     "description":[
-                        "You can take the southbound ExpressLanes HOV ramp to travel on the I-95 south HOV lanes or the I-395 north HOV lanes."
+                        "Traveling from I-495/I-95, you can reach the northbound 395 Express Lanes, the southbound 95 Express Lanes, or I-495 near Braddock Road",
+                        "Traveling from I-495 near Springfield, you can reach the northbound 395 Express Lanes, the southbound 95 Express Lanes or I-495/I-95 near Van Dorn Street"
                     ]
                 },
                 "exits":[
@@ -383,6 +412,36 @@ var entryExits = {
                         "id":"191ND",
                         "ods":[
                             "1085"
+                        ]
+                    },
+                    {
+                        "id":"224ND",
+                        "ods":[
+                            "1265"
+                        ]
+                    },
+                    {
+                        "id":"223ND",
+                        "ods":[
+                            "1264"
+                        ]
+                    },
+                    {
+                        "id":"2232ND",
+                        "ods":[
+                            "1264"
+                        ]
+                    },
+                    {
+                        "id":"222ND",
+                        "ods":[
+                            "1263"
+                        ]
+                    },
+                    {
+                        "id":"201ND",
+                        "ods":[
+                            "1146"
                         ]
                     }
                 ]
@@ -533,7 +592,7 @@ var entryExits = {
             },
             "202NO":{
                 "id":"202NO",
-                "label":"495 Express Lanes/I-495/I-95",
+                "label":"I-495 EB / I-95 NB",
                 "latitude":"38.7921210396884800",
                 "longitude":"-77.1744060516357100",
                 "path":"95",
@@ -2264,7 +2323,7 @@ var entryExits = {
                 "latitude":"38.343597",
                 "longitude":"-77.488063",
                 "path":"95",
-                "index":"1",
+                "index":"2",
                 "details":{
                     "title":"I-95 Near Route 17",
                     "image":"/images/flash/access-maps/fredex/TRANS-FredEx-Interchange-Map-3.png",
@@ -2532,13 +2591,13 @@ var entryExits = {
             },
             "191ND":{
                 "id":"191ND",
-                "label":"I-95/I-395/I-495 (Springfield Interchange)",
-                "latitude":"38.8009051677159900",
-                "longitude":"-77.2083548981476000",
+                "label":"I-495 Near Braddock Road",
+                "latitude":"38.79989025571085",
+                "longitude":"-77.20560591900075",
                 "path":"495North",
                 "index":"129",
                 "details":{
-                    "title":"I-95/I-395/I-495 (Springfield Interchange) Access",
+                    "title":"I-495 Near Braddock Road Access",
                     "image":"/images/flash/access-maps/springfield-interchange/large-access-static.jpg",
                     "description":[
                         "You can enter the northbound Express Lanes approximately one and a half miles after the Springfield Interchange.",
@@ -2565,7 +2624,7 @@ var entryExits = {
             },
             "202ND":{
                 "id":"202ND",
-                "label":"495 Express Lanes/I-495/I-95",
+                "label":"I-495 EB / I-95 NB",
                 "latitude":"38.7896290266621550",
                 "longitude":"-77.1763855218887500",
                 "path":"95",
@@ -2846,77 +2905,77 @@ var entryExits = {
                         "id":"201SD",
                         "ods":[
                             "1040",
-                            "1146"
+                            "1374"
                         ]
                     },
                     {
                         "id":"203SD",
                         "ods":[
                             "1040",
-                            "1158"
+                            "1378"
                         ]
                     },
                     {
                         "id":"205SD",
                         "ods":[
                             "1040",
-                            "1159"
+                            "1379"
                         ]
                     },
                     {
                         "id":"206SD",
                         "ods":[
                             "1040",
-                            "1160"
+                            "1380"
                         ]
                     },
                     {
                         "id":"210SD",
                         "ods":[
                             "1040",
-                            "1161"
+                            "1381"
                         ]
                     },
                     {
                         "id":"211SD",
                         "ods":[
                             "1040",
-                            "1162"
+                            "1382"
                         ]
                     },
                     {
                         "id":"213SD",
                         "ods":[
                             "1040",
-                            "1163"
+                            "1383"
                         ]
                     },
                     {
                         "id":"216SD",
                         "ods":[
                             "1040",
-                            "1164"
+                            "1384"
                         ]
                     },
                     {
                         "id":"217SD",
                         "ods":[
                             "1040",
-                            "1165"
+                            "1385"
                         ]
                     },
                     {
                         "id":"218SD",
                         "ods":[
                             "1040",
-                            "1166"
+                            "1386"
                         ]
                     },
                     {
                         "id":"220SD",
                         "ods":[
                             "1040",
-                            "1167"
+                            "1387"
                         ]
                     },
                     {
@@ -2930,14 +2989,14 @@ var entryExits = {
                         "id":"233SD",
                         "ods":[
                             "1040",
-                            "1315"
+                            "1389"
                         ]
                     },
                     {
                         "id":"235SD",
                         "ods":[
                             "1040",
-                            "1288"
+                            "1388"
                         ]
                     }
                 ]
@@ -3028,77 +3087,77 @@ var entryExits = {
                         "id":"201SD",
                         "ods":[
                             "1048",
-                            "1146"
+                            "1374"
                         ]
                     },
                     {
                         "id":"203SD",
                         "ods":[
                             "1048",
-                            "1158"
+                            "1378"
                         ]
                     },
                     {
                         "id":"205SD",
                         "ods":[
                             "1048",
-                            "1159"
+                            "1379"
                         ]
                     },
                     {
                         "id":"206SD",
                         "ods":[
                             "1048",
-                            "1160"
+                            "1380"
                         ]
                     },
                     {
                         "id":"210SD",
                         "ods":[
                             "1048",
-                            "1161"
+                            "1381"
                         ]
                     },
                     {
                         "id":"211SD",
                         "ods":[
                             "1048",
-                            "1162"
+                            "1382"
                         ]
                     },
                     {
                         "id":"213SD",
                         "ods":[
                             "1048",
-                            "1163"
+                            "1383"
                         ]
                     },
                     {
                         "id":"216SD",
                         "ods":[
                             "1048",
-                            "1164"
+                            "1384"
                         ]
                     },
                     {
                         "id":"217SD",
                         "ods":[
                             "1048",
-                            "1165"
+                            "1385"
                         ]
                     },
                     {
                         "id":"218SD",
                         "ods":[
                             "1048",
-                            "1166"
+                            "1386"
                         ]
                     },
                     {
                         "id":"220SD",
                         "ods":[
                             "1048",
-                            "1167"
+                            "1387"
                         ]
                     },
                     {
@@ -3112,14 +3171,14 @@ var entryExits = {
                         "id":"233SD",
                         "ods":[
                             "1048",
-                            "1315"
+                            "1389"
                         ]
                     },
                     {
                         "id":"235SD",
                         "ods":[
                             "1048",
-                            "1288"
+                            "1388"
                         ]
                     }
                 ]
@@ -3209,77 +3268,77 @@ var entryExits = {
                         "id":"201SD",
                         "ods":[
                             "1055",
-                            "1146"
+                            "1374"
                         ]
                     },
                     {
                         "id":"203SD",
                         "ods":[
                             "1055",
-                            "1158"
+                            "1378"
                         ]
                     },
                     {
                         "id":"205SD",
                         "ods":[
                             "1055",
-                            "1159"
+                            "1379"
                         ]
                     },
                     {
                         "id":"206SD",
                         "ods":[
                             "1055",
-                            "1160"
+                            "1380"
                         ]
                     },
                     {
                         "id":"210SD",
                         "ods":[
                             "1055",
-                            "1161"
+                            "1381"
                         ]
                     },
                     {
                         "id":"211SD",
                         "ods":[
                             "1055",
-                            "1162"
+                            "1382"
                         ]
                     },
                     {
                         "id":"213SD",
                         "ods":[
                             "1055",
-                            "1163"
+                            "1383"
                         ]
                     },
                     {
                         "id":"216SD",
                         "ods":[
                             "1055",
-                            "1164"
+                            "1384"
                         ]
                     },
                     {
                         "id":"217SD",
                         "ods":[
                             "1055",
-                            "1165"
+                            "1385"
                         ]
                     },
                     {
                         "id":"218SD",
                         "ods":[
                             "1055",
-                            "1166"
+                            "1386"
                         ]
                     },
                     {
                         "id":"220SD",
                         "ods":[
                             "1055",
-                            "1167"
+                            "1387"
                         ]
                     },
                     {
@@ -3293,14 +3352,14 @@ var entryExits = {
                         "id":"233SD",
                         "ods":[
                             "1055",
-                            "1315"
+                            "1389"
                         ]
                     },
                     {
                         "id":"235SD",
                         "ods":[
                             "1055",
-                            "1288"
+                            "1388"
                         ]
                     }
                 ]
@@ -3383,77 +3442,77 @@ var entryExits = {
                         "id":"201SD",
                         "ods":[
                             "1062",
-                            "1146"
+                            "1374"
                         ]
                     },
                     {
                         "id":"203SD",
                         "ods":[
                             "1062",
-                            "1158"
+                            "1378"
                         ]
                     },
                     {
                         "id":"205SD",
                         "ods":[
                             "1062",
-                            "1159"
+                            "1379"
                         ]
                     },
                     {
                         "id":"206SD",
                         "ods":[
                             "1062",
-                            "1160"
+                            "1380"
                         ]
                     },
                     {
                         "id":"210SD",
                         "ods":[
                             "1062",
-                            "1161"
+                            "1381"
                         ]
                     },
                     {
                         "id":"211SD",
                         "ods":[
                             "1062",
-                            "1162"
+                            "1382"
                         ]
                     },
                     {
                         "id":"213SD",
                         "ods":[
                             "1062",
-                            "1163"
+                            "1383"
                         ]
                     },
                     {
                         "id":"216SD",
                         "ods":[
                             "1062",
-                            "1164"
+                            "1384"
                         ]
                     },
                     {
                         "id":"217SD",
                         "ods":[
                             "1062",
-                            "1165"
+                            "1385"
                         ]
                     },
                     {
                         "id":"218SD",
                         "ods":[
                             "1062",
-                            "1166"
+                            "1386"
                         ]
                     },
                     {
                         "id":"220SD",
                         "ods":[
                             "1062",
-                            "1167"
+                            "1387"
                         ]
                     },
                     {
@@ -3467,14 +3526,14 @@ var entryExits = {
                         "id":"233SD",
                         "ods":[
                             "1062",
-                            "1315"
+                            "1389"
                         ]
                     },
                     {
                         "id":"235SD",
                         "ods":[
                             "1062",
-                            "1288"
+                            "1388"
                         ]
                     }
                 ]
@@ -3557,77 +3616,77 @@ var entryExits = {
                         "id":"201SD",
                         "ods":[
                             "1068",
-                            "1146"
+                            "1374"
                         ]
                     },
                     {
                         "id":"203SD",
                         "ods":[
                             "1068",
-                            "1158"
+                            "1378"
                         ]
                     },
                     {
                         "id":"205SD",
                         "ods":[
                             "1068",
-                            "1159"
+                            "1379"
                         ]
                     },
                     {
                         "id":"206SD",
                         "ods":[
                             "1068",
-                            "1160"
+                            "1380"
                         ]
                     },
                     {
                         "id":"210SD",
                         "ods":[
                             "1068",
-                            "1161"
+                            "1381"
                         ]
                     },
                     {
                         "id":"211SD",
                         "ods":[
                             "1068",
-                            "1162"
+                            "1382"
                         ]
                     },
                     {
                         "id":"213SD",
                         "ods":[
                             "1068",
-                            "1163"
+                            "1383"
                         ]
                     },
                     {
                         "id":"216SD",
                         "ods":[
                             "1068",
-                            "1164"
+                            "1384"
                         ]
                     },
                     {
                         "id":"217SD",
                         "ods":[
                             "1068",
-                            "1165"
+                            "1385"
                         ]
                     },
                     {
                         "id":"218SD",
                         "ods":[
                             "1068",
-                            "1166"
+                            "1386"
                         ]
                     },
                     {
                         "id":"220SD",
                         "ods":[
                             "1068",
-                            "1167"
+                            "1387"
                         ]
                     },
                     {
@@ -3641,14 +3700,14 @@ var entryExits = {
                         "id":"233SD",
                         "ods":[
                             "1068",
-                            "1315"
+                            "1389"
                         ]
                     },
                     {
                         "id":"235SD",
                         "ods":[
                             "1068",
-                            "1288"
+                            "1388"
                         ]
                     }
                 ]
@@ -3728,77 +3787,77 @@ var entryExits = {
                         "id":"201SD",
                         "ods":[
                             "1074",
-                            "1146"
+                            "1374"
                         ]
                     },
                     {
                         "id":"203SD",
                         "ods":[
                             "1074",
-                            "1158"
+                            "1378"
                         ]
                     },
                     {
                         "id":"205SD",
                         "ods":[
                             "1074",
-                            "1159"
+                            "1379"
                         ]
                     },
                     {
                         "id":"206SD",
                         "ods":[
                             "1074",
-                            "1160"
+                            "1380"
                         ]
                     },
                     {
                         "id":"210SD",
                         "ods":[
                             "1074",
-                            "1161"
+                            "1381"
                         ]
                     },
                     {
                         "id":"211SD",
                         "ods":[
                             "1074",
-                            "1162"
+                            "1382"
                         ]
                     },
                     {
                         "id":"213SD",
                         "ods":[
                             "1074",
-                            "1163"
+                            "1383"
                         ]
                     },
                     {
                         "id":"216SD",
                         "ods":[
                             "1074",
-                            "1164"
+                            "1384"
                         ]
                     },
                     {
                         "id":"217SD",
                         "ods":[
                             "1074",
-                            "1165"
+                            "1385"
                         ]
                     },
                     {
                         "id":"218SD",
                         "ods":[
                             "1074",
-                            "1166"
+                            "1386"
                         ]
                     },
                     {
                         "id":"220SD",
                         "ods":[
                             "1074",
-                            "1167"
+                            "1387"
                         ]
                     },
                     {
@@ -3812,14 +3871,14 @@ var entryExits = {
                         "id":"233SD",
                         "ods":[
                             "1074",
-                            "1315"
+                            "1389"
                         ]
                     },
                     {
                         "id":"235SD",
                         "ods":[
                             "1074",
-                            "1288"
+                            "1388"
                         ]
                     }
                 ]
@@ -3897,77 +3956,77 @@ var entryExits = {
                         "id":"201SD",
                         "ods":[
                             "1079",
-                            "1146"
+                            "1374"
                         ]
                     },
                     {
                         "id":"203SD",
                         "ods":[
                             "1079",
-                            "1158"
+                            "1378"
                         ]
                     },
                     {
                         "id":"205SD",
                         "ods":[
                             "1079",
-                            "1159"
+                            "1379"
                         ]
                     },
                     {
                         "id":"206SD",
                         "ods":[
                             "1079",
-                            "1160"
+                            "1380"
                         ]
                     },
                     {
                         "id":"210SD",
                         "ods":[
                             "1079",
-                            "1161"
+                            "1381"
                         ]
                     },
                     {
                         "id":"211SD",
                         "ods":[
                             "1079",
-                            "1162"
+                            "1382"
                         ]
                     },
                     {
                         "id":"213SD",
                         "ods":[
                             "1079",
-                            "1163"
+                            "1383"
                         ]
                     },
                     {
                         "id":"216SD",
                         "ods":[
                             "1079",
-                            "1164"
+                            "1384"
                         ]
                     },
                     {
                         "id":"217SD",
                         "ods":[
                             "1079",
-                            "1165"
+                            "1385"
                         ]
                     },
                     {
                         "id":"218SD",
                         "ods":[
                             "1079",
-                            "1166"
+                            "1386"
                         ]
                     },
                     {
                         "id":"220SD",
                         "ods":[
                             "1079",
-                            "1167"
+                            "1387"
                         ]
                     },
                     {
@@ -3981,27 +4040,27 @@ var entryExits = {
                         "id":"233SD",
                         "ods":[
                             "1079",
-                            "1315"
+                            "1389"
                         ]
                     },
                     {
                         "id":"235SD",
                         "ods":[
                             "1079",
-                            "1288"
+                            "1388"
                         ]
                     }
                 ]
             },
             "191SO":{
                 "id":"191SO",
-                "label":"I-95/I-395/I-495 (Springfield Interchange)",
-                "latitude":"38.80062924",
-                "longitude":"-77.20869822",
+                "label":"I-495 Near Braddock Road",
+                "latitude":"38.79989025571085",
+                "longitude":"-77.20560591900075",
                 "path":"495South",
                 "index":"129",
                 "details":{
-                    "title":"I-95/I-395/I-495 (Springfield Interchange) Access",
+                    "title":"I-495 Near Braddock Road Access",
                     "image":"/images/flash/access-maps/springfield-interchange/large-access-static.jpg",
                     "description":[
                         "You can enter the northbound Express Lanes approximately one and a half miles after the Springfield Interchange.",
@@ -4012,112 +4071,77 @@ var entryExits = {
                     {
                         "id":"192SD",
                         "ods":[
-                            "1084"
-                        ]
-                    },
-                    {
-                        "id":"2249ND",
-                        "ods":[
-                            "1083",
-                            "1265"
-                        ]
-                    },
-                    {
-                        "id":"2239ND",
-                        "ods":[
-                            "1083",
-                            "1264"
-                        ]
-                    },
-                    {
-                        "id":"22329ND",
-                        "ods":[
-                            "1083",
-                            "1264"
-                        ]
-                    },
-                    {
-                        "id":"2229ND",
-                        "ods":[
-                            "1083",
-                            "1263"
-                        ]
-                    },
-                    {
-                        "id":"201SD",
-                        "ods":[
-                            "1084",
-                            "1146"
+                            "1083"
                         ]
                     },
                     {
                         "id":"203SD",
                         "ods":[
-                            "1084",
-                            "1158"
+                            "1083",
+                            "1378"
                         ]
                     },
                     {
                         "id":"205SD",
                         "ods":[
-                            "1084",
-                            "1159"
+                            "1083",
+                            "1379"
                         ]
                     },
                     {
                         "id":"206SD",
                         "ods":[
-                            "1084",
-                            "1160"
+                            "1083",
+                            "1380"
                         ]
                     },
                     {
                         "id":"210SD",
                         "ods":[
-                            "1084",
-                            "1161"
+                            "1083",
+                            "1381"
                         ]
                     },
                     {
                         "id":"211SD",
                         "ods":[
-                            "1084",
-                            "1162"
+                            "1083",
+                            "1382"
                         ]
                     },
                     {
                         "id":"213SD",
                         "ods":[
-                            "1084",
-                            "1163"
+                            "1083",
+                            "1383"
                         ]
                     },
                     {
                         "id":"216SD",
                         "ods":[
-                            "1084",
-                            "1164"
+                            "1083",
+                            "1384"
                         ]
                     },
                     {
                         "id":"217SD",
                         "ods":[
-                            "1084",
-                            "1165"
+                            "1083",
+                            "1385"
                         ]
                     },
                     {
                         "id":"218SD",
                         "ods":[
-                            "1084",
-                            "1166"
+                            "1083",
+                            "1386"
                         ]
                     },
                     {
                         "id":"220SD",
                         "ods":[
-                            "1084",
-                            "1167"
+                            "1083",
+                            "1387"
                         ]
                     },
                     {
@@ -4130,14 +4154,15 @@ var entryExits = {
                     {
                         "id":"233SD",
                         "ods":[
-                            "1084",
-                            "1315"
+                            "1083",
+                            "1389"
                         ]
                     },
                     {
                         "id":"235SD",
                         "ods":[
-                            "1289"
+                            "1083",
+                            "1388"
                         ]
                     }
                 ]
@@ -5001,7 +5026,7 @@ var entryExits = {
             },
             "202SO":{
                 "id":"202SO",
-                "label":"495 Express Lanes/I-495/I-95",
+                "label":"I-495 EB / I-95 NB",
                 "latitude":"38.7923593652290600",
                 "longitude":"-77.1741700172424300",
                 "path":"95",
@@ -5732,13 +5757,13 @@ var entryExits = {
             },
             "191SD":{
                 "id":"191SD",
-                "label":"I-95/I-395/I-495 (Springfield Interchange)",
-                "latitude":"38.8006292448410260",
-                "longitude":"-77.2086982209015100",
+                "label":"I-495 Near Braddock Road",
+                "latitude":"38.79989025571085",
+                "longitude":"-77.20560591900075",
                 "path":"495South",
                 "index":"129",
                 "details":{
-                    "title":"I-95/I-395/I-495 (Springfield Interchange) Access",
+                    "title":"I-495 Near Braddock Road Access",
                     "image":"/images/flash/access-maps/springfield-interchange/large-access-static.jpg",
                     "description":[
                         "You can enter the northbound Express Lanes approximately one and a half miles after the Springfield Interchange.",
@@ -5748,16 +5773,17 @@ var entryExits = {
             },
             "192SD":{
                 "id":"192SD",
-                "label":"I-95/I-395 Express Lanes ramps",
-                "latitude":"38.7898798205903400",
-                "longitude":"-77.1720827434112400",
+                "label":"I-495/I-95 Near Van Dorn Street",
+                "latitude":"38.79347384215561",
+                "longitude":"-77.15413222704926",
                 "path":"495South",
                 "index":"151",
                 "details":{
-                    "title":"I-95/I-395 HOV Ramps Access",
+                    "title":"I-495/I-95 Near Van Dorn Street",
                     "image":"/images/flash/access-maps/i95/large-access-static.jpg",
                     "description":[
-                        "You can take the southbound Express Lanes HOV ramp to travel on the I-95 south HOV lanes or the I-395 north HOV lanes."
+                        "Traveling from I-495/I-95, you can reach the northbound 395 Express Lanes, the southbound 95 Express Lanes, or I-495 near Braddock Road",
+                        "Traveling from I-495 near Springfield, you can reach the northbound 395 Express Lanes, the southbound 95 Express Lanes or I-495/I-95 near Van Dorn Street"
                     ]
                 }
             },
@@ -5884,13 +5910,13 @@ var entryExits = {
             },
             "1919ND":{
                 "id":"1919ND",
-                "label":"I-95/I-395/I-495 (Springfield Interchange)",
-                "latitude":"38.8009051677159900",
-                "longitude":"-77.2083548981476000",
+                "label":"I-495 Near Braddock Road",
+                "latitude":"38.79989025571085",
+                "longitude":"-77.20560591900075",
                 "path":"495North",
                 "index":"129",
                 "details":{
-                    "title":"I-95/I-395/I-495 (Springfield Interchange) Access",
+                    "title":"I-495 Near Braddock Road Access",
                     "image":"/images/flash/access-maps/springfield-interchange/large-access-static.jpg",
                     "description":[
                         "You can enter the northbound Express Lanes approximately one and a half miles after the Springfield Interchange.",
@@ -5900,7 +5926,7 @@ var entryExits = {
             },
             "202SD":{
                 "id":"202SD",
-                "label":"495 Express Lanes/I-495/I-95",
+                "label":"I-495 EB / I-95 NB",
                 "latitude":"38.7921210396884800",
                 "longitude":"-77.1744060516357100",
                 "path":"95",
