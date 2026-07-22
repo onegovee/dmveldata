@@ -1246,7 +1246,7 @@
     },
     {
       "od": "od_1147",
-      "price": "1.85",
+      "price": "1.80",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1255,7 +1255,7 @@
     },
     {
       "od": "od_1148",
-      "price": "3.60",
+      "price": "3.55",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1264,7 +1264,7 @@
     },
     {
       "od": "od_1149",
-      "price": "4.10",
+      "price": "4.05",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1273,7 +1273,7 @@
     },
     {
       "od": "od_1150",
-      "price": "4.10",
+      "price": "4.05",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1372,7 +1372,7 @@
     },
     {
       "od": "od_1161",
-      "price": "4.40",
+      "price": "4.45",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1381,96 +1381,6 @@
     },
     {
       "od": "od_1162",
-      "price": "4.75",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2026-07-22 00:00:00",
-      "direction": "S",
-      "status": "open"
-    },
-    {
-      "od": "od_1163",
-      "price": "5.05",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2026-07-22 00:00:00",
-      "direction": "S",
-      "status": "open"
-    },
-    {
-      "od": "od_1164",
-      "price": "5.30",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2026-07-22 00:00:00",
-      "direction": "S",
-      "status": "open"
-    },
-    {
-      "od": "od_1165",
-      "price": "7.05",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2026-07-22 00:00:00",
-      "direction": "S",
-      "status": "open"
-    },
-    {
-      "od": "od_1166",
-      "price": "7.60",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2026-07-22 00:00:00",
-      "direction": "S",
-      "status": "open"
-    },
-    {
-      "od": "od_1167",
-      "price": "10.35",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2026-07-22 00:00:00",
-      "direction": "S",
-      "status": "open"
-    },
-    {
-      "od": "od_1168",
-      "price": "2.15",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2026-07-22 00:00:00",
-      "direction": "S",
-      "status": "open"
-    },
-    {
-      "od": "od_1169",
-      "price": "2.50",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2026-07-22 00:00:00",
-      "direction": "S",
-      "status": "open"
-    },
-    {
-      "od": "od_1170",
-      "price": "2.80",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2026-07-22 00:00:00",
-      "direction": "S",
-      "status": "open"
-    },
-    {
-      "od": "od_1171",
-      "price": "3.05",
-      "road": "95",
-      "ratetype": "null",
-      "time": "2026-07-22 00:00:00",
-      "direction": "S",
-      "status": "open"
-    },
-    {
-      "od": "od_1172",
       "price": "4.80",
       "road": "95",
       "ratetype": "null",
@@ -1479,7 +1389,16 @@
       "status": "open"
     },
     {
-      "od": "od_1173",
+      "od": "od_1163",
+      "price": "5.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2026-07-22 00:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1164",
       "price": "5.35",
       "road": "95",
       "ratetype": "null",
@@ -1488,8 +1407,89 @@
       "status": "open"
     },
     {
+      "od": "od_1165",
+      "price": "7.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2026-07-22 00:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1166",
+      "price": "7.65",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2026-07-22 00:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1167",
+      "price": "10.40",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2026-07-22 00:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1168",
+      "price": "2.20",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2026-07-22 00:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1169",
+      "price": "2.55",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2026-07-22 00:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1170",
+      "price": "2.85",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2026-07-22 00:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1171",
+      "price": "3.10",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2026-07-22 00:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1172",
+      "price": "4.85",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2026-07-22 00:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
+      "od": "od_1173",
+      "price": "5.40",
+      "road": "95",
+      "ratetype": "null",
+      "time": "2026-07-22 00:00:00",
+      "direction": "S",
+      "status": "open"
+    },
+    {
       "od": "od_1174",
-      "price": "8.10",
+      "price": "8.15",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1759,7 +1759,7 @@
     },
     {
       "od": "od_1204",
-      "price": "4.90",
+      "price": "4.85",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1768,7 +1768,7 @@
     },
     {
       "od": "od_1205",
-      "price": "6.65",
+      "price": "6.60",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1777,7 +1777,7 @@
     },
     {
       "od": "od_1206",
-      "price": "7.15",
+      "price": "7.10",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1786,7 +1786,7 @@
     },
     {
       "od": "od_1207",
-      "price": "7.15",
+      "price": "7.10",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1867,7 +1867,7 @@
     },
     {
       "od": "od_1216",
-      "price": "3.60",
+      "price": "3.55",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1876,7 +1876,7 @@
     },
     {
       "od": "od_1217",
-      "price": "4.45",
+      "price": "4.40",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1885,7 +1885,7 @@
     },
     {
       "od": "od_1218",
-      "price": "4.95",
+      "price": "4.90",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -1894,7 +1894,7 @@
     },
     {
       "od": "od_1219",
-      "price": "4.95",
+      "price": "4.90",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2443,7 +2443,7 @@
     },
     {
       "od": "od_1283",
-      "price": "8.80",
+      "price": "8.85",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2452,7 +2452,7 @@
     },
     {
       "od": "od_1284",
-      "price": "11.55",
+      "price": "11.60",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2461,7 +2461,7 @@
     },
     {
       "od": "od_1285",
-      "price": "11.60",
+      "price": "11.65",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2470,7 +2470,7 @@
     },
     {
       "od": "od_1286",
-      "price": "11.60",
+      "price": "11.65",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2479,7 +2479,7 @@
     },
     {
       "od": "od_1287",
-      "price": "11.85",
+      "price": "11.95",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2488,7 +2488,7 @@
     },
     {
       "od": "od_1288",
-      "price": "14.10",
+      "price": "14.20",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2497,7 +2497,7 @@
     },
     {
       "od": "od_1289",
-      "price": "15.95",
+      "price": "16.00",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2506,7 +2506,7 @@
     },
     {
       "od": "od_1290",
-      "price": "16.80",
+      "price": "16.85",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2515,7 +2515,7 @@
     },
     {
       "od": "od_1291",
-      "price": "19.00",
+      "price": "19.05",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2524,7 +2524,7 @@
     },
     {
       "od": "od_1292",
-      "price": "3.75",
+      "price": "3.80",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2650,7 +2650,7 @@
     },
     {
       "od": "od_1306",
-      "price": "3.05",
+      "price": "3.10",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2659,7 +2659,7 @@
     },
     {
       "od": "od_1307",
-      "price": "5.15",
+      "price": "5.20",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2668,7 +2668,7 @@
     },
     {
       "od": "od_1308",
-      "price": "1.75",
+      "price": "3.60",
       "road": "null",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2677,7 +2677,7 @@
     },
     {
       "od": "od_1310",
-      "price": "6.80",
+      "price": "8.65",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2686,7 +2686,7 @@
     },
     {
       "od": "od_1311",
-      "price": "9.55",
+      "price": "11.40",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2695,7 +2695,7 @@
     },
     {
       "od": "od_1312",
-      "price": "9.60",
+      "price": "11.45",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2704,7 +2704,7 @@
     },
     {
       "od": "od_1313",
-      "price": "9.60",
+      "price": "11.45",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2713,7 +2713,7 @@
     },
     {
       "od": "od_1314",
-      "price": "9.85",
+      "price": "11.75",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2722,7 +2722,7 @@
     },
     {
       "od": "od_1315",
-      "price": "12.10",
+      "price": "14.00",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2731,7 +2731,7 @@
     },
     {
       "od": "od_1316",
-      "price": "13.95",
+      "price": "15.80",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2740,7 +2740,7 @@
     },
     {
       "od": "od_1317",
-      "price": "14.80",
+      "price": "16.65",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2749,7 +2749,7 @@
     },
     {
       "od": "od_1318",
-      "price": "17.00",
+      "price": "18.85",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2758,7 +2758,7 @@
     },
     {
       "od": "od_1344",
-      "price": "6.80",
+      "price": "8.65",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2767,7 +2767,7 @@
     },
     {
       "od": "od_1345",
-      "price": "8.80",
+      "price": "8.85",
       "road": "95",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2947,7 +2947,7 @@
     },
     {
       "od": "od_1371",
-      "price": "1.85",
+      "price": "1.80",
       "road": "null",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2956,7 +2956,7 @@
     },
     {
       "od": "od_1372",
-      "price": "4.90",
+      "price": "4.85",
       "road": "null",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -2965,7 +2965,7 @@
     },
     {
       "od": "od_1373",
-      "price": "3.60",
+      "price": "3.55",
       "road": "null",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -3037,7 +3037,7 @@
     },
     {
       "od": "od_1381",
-      "price": "4.40",
+      "price": "4.45",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -3046,7 +3046,7 @@
     },
     {
       "od": "od_1382",
-      "price": "4.75",
+      "price": "4.80",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -3055,7 +3055,7 @@
     },
     {
       "od": "od_1383",
-      "price": "5.05",
+      "price": "5.10",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -3064,7 +3064,7 @@
     },
     {
       "od": "od_1384",
-      "price": "5.30",
+      "price": "5.35",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -3073,7 +3073,7 @@
     },
     {
       "od": "od_1385",
-      "price": "7.05",
+      "price": "7.10",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -3082,7 +3082,7 @@
     },
     {
       "od": "od_1386",
-      "price": "7.60",
+      "price": "7.65",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -3091,7 +3091,7 @@
     },
     {
       "od": "od_1387",
-      "price": "10.35",
+      "price": "10.40",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -3100,7 +3100,7 @@
     },
     {
       "od": "od_1388",
-      "price": "14.10",
+      "price": "14.20",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
@@ -3109,7 +3109,7 @@
     },
     {
       "od": "od_1389",
-      "price": "12.10",
+      "price": "14.00",
       "road": "395",
       "ratetype": "null",
       "time": "2026-07-22 00:00:00",
