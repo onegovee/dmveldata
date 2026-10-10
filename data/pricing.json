@@ -4,7 +4,7 @@
   "response": [
     {
       "od": "od_1000",
-      "price": "3.15",
+      "price": "6.30",
       "road": "null",
       "ratetype": "null",
       "time": "2026-10-10 05:00:00",
@@ -319,7 +319,7 @@
     },
     {
       "od": "od_1035",
-      "price": "1.10",
+      "price": "2.20",
       "road": "495",
       "ratetype": "null",
       "time": "2026-10-10 05:00:00",
